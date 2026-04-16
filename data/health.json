@@ -1,0 +1,152 @@
+[
+  {
+    "id": "child-fever",
+    "symptoms": ["fever", "bukhar", "temperature", "badan garam"],
+    "age_group": "child",
+    "description": "Fever in children - body temperature above 100.4F (38C)",
+    "severity_questions": ["How many days has the fever lasted?", "What is the approximate temperature?", "Is there any rash, vomiting, or seizures?"],
+    "action_mild": "Give paracetamol syrup (10-15mg per kg body weight, every 6 hours). Keep child hydrated with ORS or clean water. Sponge with lukewarm (not cold) water. Light clothing.",
+    "action_severe": "Go to nearest hospital immediately if: fever lasts more than 3 days, child has seizures or convulsions, child refuses to drink, rash appears, child is unusually drowsy.",
+    "disclaimer": "This is general first-aid guidance only. Please consult a doctor for proper diagnosis and treatment."
+  },
+  {
+    "id": "diarrhea",
+    "symptoms": ["diarrhea", "dast", "loose motion", "pet kharab", "ulti"],
+    "age_group": "all",
+    "description": "Diarrhea - frequent loose or watery stools, possibly with vomiting",
+    "severity_questions": ["How many loose stools in the last 24 hours?", "Is there blood in the stool?", "Is the person able to drink fluids?"],
+    "action_mild": "Give ORS (Oral Rehydration Solution) after every loose stool. If ORS not available, mix 6 teaspoons sugar and half teaspoon salt in 1 litre clean water. Continue feeding. Zinc tablets for children (20mg/day for 10-14 days).",
+    "action_severe": "Go to hospital immediately if: blood in stool, unable to drink, sunken eyes, very dry mouth, no urination for 6+ hours, high fever with diarrhea.",
+    "disclaimer": "This is general first-aid guidance only. Please consult a doctor for proper diagnosis and treatment."
+  },
+  {
+    "id": "snake-bite",
+    "symptoms": ["snake bite", "saanp kata", "saanp ne kaata"],
+    "age_group": "all",
+    "description": "Snake bite - requires immediate medical attention",
+    "severity_questions": ["How long ago did the bite happen?", "Did you see the snake? What did it look like?", "Is there swelling or pain at the bite site?"],
+    "action_mild": "Keep the person calm and still. Remove jewelry near bite site. Keep bitten limb below heart level. Do NOT cut the wound, suck venom, or apply tourniquet. Do NOT apply ice. Mark the edge of swelling with pen and time.",
+    "action_severe": "ALL snake bites need hospital treatment. Call ambulance (108) immediately. Anti-venom must be given within 2-4 hours. Go to nearest government hospital - they have free anti-venom.",
+    "disclaimer": "Snake bites are medical emergencies. Go to hospital immediately regardless of symptoms."
+  },
+  {
+    "id": "burns",
+    "symptoms": ["burns", "jalna", "jalaa", "aag se jala"],
+    "age_group": "all",
+    "description": "Burns from fire, hot water, hot oil, or chemicals",
+    "severity_questions": ["What caused the burn (fire, hot water, chemicals)?", "How large is the burned area?", "Are there blisters or is the skin charred?"],
+    "action_mild": "Cool the burn under clean running water for 10-20 minutes. Do NOT apply ice, butter, toothpaste, or oil. Cover with clean cloth. Give paracetamol for pain.",
+    "action_severe": "Go to hospital if: burn is larger than palm size, burn is on face/hands/joints, burn has charred skin, chemical burn, electrical burn, burn on child under 5.",
+    "disclaimer": "This is general first-aid guidance only. Please consult a doctor for proper diagnosis and treatment."
+  },
+  {
+    "id": "dehydration",
+    "symptoms": ["dehydration", "pani ki kami", "weakness", "kamzori", "chakkar"],
+    "age_group": "all",
+    "description": "Dehydration from heat, diarrhea, or not drinking enough water",
+    "severity_questions": ["When did the person last urinate?", "Is the person dizzy or confused?", "Has there been vomiting or diarrhea?"],
+    "action_mild": "Give ORS solution or clean water with salt and sugar. Rest in shade. Small sips frequently (not large amounts at once). If due to heat, cool the body with wet cloth.",
+    "action_severe": "Go to hospital if: no urination for 8+ hours, person is confused or unconscious, sunken eyes, skin does not bounce back when pinched, rapid heartbeat.",
+    "disclaimer": "This is general first-aid guidance only. Please consult a doctor for proper diagnosis and treatment."
+  },
+  {
+    "id": "pregnancy-warning",
+    "symptoms": ["pregnancy problem", "garbh mein dikkat", "bleeding during pregnancy", "pregnancy pain"],
+    "age_group": "adult",
+    "description": "Warning signs during pregnancy that need immediate medical attention",
+    "severity_questions": ["How many months pregnant?", "Is there any bleeding?", "Is there severe headache or blurred vision?"],
+    "action_mild": "Regular prenatal checkups are essential. Take iron and folic acid tablets daily. Eat nutritious food. Rest adequately. Visit ASHA worker for free check-ups.",
+    "action_severe": "Go to hospital IMMEDIATELY if: vaginal bleeding, severe headache, blurred vision, swelling of face/hands, baby not moving, water breaks early, high fever, convulsions.",
+    "disclaimer": "Pregnancy complications are medical emergencies. Always consult a doctor. Call 108 for ambulance."
+  },
+  {
+    "id": "dog-bite",
+    "symptoms": ["dog bite", "kutte ne kaata", "animal bite"],
+    "age_group": "all",
+    "description": "Dog or animal bite - risk of rabies",
+    "severity_questions": ["How long ago did the bite happen?", "Was it a stray dog or a pet?", "Is the wound bleeding?"],
+    "action_mild": "Wash wound thoroughly with soap and running water for 15 minutes. Apply antiseptic. Do NOT apply turmeric, chili, or other home remedies on wound.",
+    "action_severe": "ALL dog/animal bites need anti-rabies vaccination. Go to government hospital immediately - vaccine is FREE. Rabies is 100% fatal if untreated. Complete the full course of 4-5 injections.",
+    "disclaimer": "Animal bites require medical treatment for rabies prevention. Go to hospital immediately."
+  },
+  {
+    "id": "heat-stroke",
+    "symptoms": ["heat stroke", "loo lagna", "garmi se beemar", "sun stroke"],
+    "age_group": "all",
+    "description": "Heat stroke or heat exhaustion from extreme heat exposure",
+    "severity_questions": ["Is the person sweating or has sweating stopped?", "Is the person confused or unconscious?", "What is the person's temperature?"],
+    "action_mild": "Move to shade immediately. Remove excess clothing. Pour cool water on body. Fan the person. Give ORS or cool water to drink. Place wet cloth on neck, armpits, groin.",
+    "action_severe": "Call 108 immediately if: person is unconscious, not sweating despite heat, temperature above 104F (40C), seizures, confusion. Heat stroke can be fatal.",
+    "disclaimer": "This is general first-aid guidance only. Please consult a doctor for proper diagnosis and treatment."
+  },
+  {
+    "id": "cuts-wounds",
+    "symptoms": ["cut", "wound", "chot", "khoon nikal raha", "bleeding"],
+    "age_group": "all",
+    "description": "Cuts, wounds, and bleeding injuries",
+    "severity_questions": ["How deep is the cut?", "Is the bleeding stopping with pressure?", "When was the last tetanus injection?"],
+    "action_mild": "Clean wound with clean water. Apply firm pressure with clean cloth for 10 minutes. Apply antiseptic. Cover with clean bandage. Keep wound clean and dry.",
+    "action_severe": "Go to hospital if: bleeding does not stop after 15 minutes of pressure, wound is deep or gaping, wound from rusty object (need tetanus shot), wound on face, signs of infection (redness, pus, fever).",
+    "disclaimer": "This is general first-aid guidance only. Please consult a doctor for proper diagnosis and treatment."
+  },
+  {
+    "id": "chest-pain",
+    "symptoms": ["chest pain", "seene mein dard", "heart attack", "dil ka daura"],
+    "age_group": "adult",
+    "description": "Chest pain - could be heart attack or other causes",
+    "severity_questions": ["Where exactly is the pain?", "Does the pain spread to arm, jaw, or back?", "Is there sweating, nausea, or shortness of breath?"],
+    "action_mild": "If mild and comes with coughing or after eating, it may be acidity. Rest and observe. Take antacid if needed.",
+    "action_severe": "Call 108 IMMEDIATELY if: crushing pain in center of chest, pain spreading to left arm/jaw/back, sweating, nausea, shortness of breath, dizziness. Chew one aspirin tablet (300mg) while waiting for ambulance. Do NOT drive yourself.",
+    "disclaimer": "Chest pain can be a heart attack. Call 108 immediately. Do not delay."
+  },
+  {
+    "id": "food-poisoning",
+    "symptoms": ["food poisoning", "khaana kharab", "vomiting after food", "khana khane ke baad ulti"],
+    "age_group": "all",
+    "description": "Food poisoning from contaminated food or water",
+    "severity_questions": ["When did you eat the suspected food?", "How many times have you vomited?", "Is there diarrhea along with vomiting?"],
+    "action_mild": "Sip ORS or clean water slowly. Do not eat solid food for a few hours. Once vomiting stops, start with bland food (khichdi, dal pani). Rest.",
+    "action_severe": "Go to hospital if: blood in vomit or stool, high fever, unable to keep any fluids down for 6+ hours, severe stomach cramps, symptoms in a pregnant woman or child under 5.",
+    "disclaimer": "This is general first-aid guidance only. Please consult a doctor for proper diagnosis and treatment."
+  },
+  {
+    "id": "breathing-difficulty",
+    "symptoms": ["breathing difficulty", "saans lene mein dikkat", "saans phoolna", "dam ghutna"],
+    "age_group": "all",
+    "description": "Difficulty breathing or shortness of breath",
+    "severity_questions": ["How suddenly did it start?", "Is there chest pain or tightness?", "Does the person have asthma or any lung condition?"],
+    "action_mild": "Help person sit upright (do not lie down). Loosen tight clothing. Move to fresh air. If known asthmatic, help use their inhaler. Stay calm.",
+    "action_severe": "Call 108 IMMEDIATELY if: lips or fingernails turning blue, unable to speak in full sentences, gasping, wheezing getting worse, choking on object, breathing difficulty after allergic reaction.",
+    "disclaimer": "Breathing difficulty can be life-threatening. Call 108 immediately if severe."
+  },
+  {
+    "id": "poisoning",
+    "symptoms": ["poison", "zeher", "keetnashak", "pesticide", "jahar kha liya"],
+    "age_group": "all",
+    "description": "Accidental or intentional poisoning from chemicals, pesticides, or medicines",
+    "severity_questions": ["What was consumed and how much?", "How long ago?", "Is the person conscious and breathing?"],
+    "action_mild": "Do NOT induce vomiting (it can cause more damage). Keep person calm. If poison is on skin, remove clothing and wash with water. Save the poison container/label for doctors.",
+    "action_severe": "Call 108 IMMEDIATELY. ALL poisoning cases need hospital treatment. Bring the poison container to hospital. If person is unconscious, place in recovery position (on side). Do not give anything by mouth to unconscious person.",
+    "disclaimer": "Poisoning is a medical emergency. Go to hospital immediately. National Poison Information Centre: 011-26593677."
+  },
+  {
+    "id": "fracture",
+    "symptoms": ["fracture", "haddi tooti", "bone break", "toot gayi haddi"],
+    "age_group": "all",
+    "description": "Suspected bone fracture from fall, accident, or injury",
+    "severity_questions": ["How did the injury happen?", "Can you move the injured part?", "Is there visible deformity or bone sticking out?"],
+    "action_mild": "Do NOT try to straighten the limb. Immobilize the injured area with a splint (use stick, cardboard). Apply ice wrapped in cloth to reduce swelling. Give paracetamol for pain.",
+    "action_severe": "Go to hospital for all suspected fractures. Call 108 if: bone is visible through skin (open fracture), injury is to head/neck/spine, person cannot feel or move below injury, heavy bleeding with fracture.",
+    "disclaimer": "All suspected fractures need X-ray and medical treatment. Do not delay hospital visit."
+  },
+  {
+    "id": "eye-injury",
+    "symptoms": ["eye injury", "aankh mein kuch gaya", "eye pain", "aankh mein dard"],
+    "age_group": "all",
+    "description": "Eye injury from foreign object, chemical splash, or trauma",
+    "severity_questions": ["What caused the eye injury?", "Is there any chemical involved?", "Can you see clearly from the affected eye?"],
+    "action_mild": "For small particle: flush eye with clean water for 10 minutes. Blink repeatedly. Do NOT rub the eye. If particle visible, try to remove with clean wet cloth corner.",
+    "action_severe": "Go to hospital IMMEDIATELY if: chemical splash (flush with water for 20 minutes first), sharp object injury, sudden vision loss, severe pain, bleeding from eye. Do NOT try to remove embedded objects.",
+    "disclaimer": "Eye injuries can cause permanent vision loss. See a doctor promptly."
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "ambulance",
+    "name": "National Ambulance Service",
+    "description": "Free emergency ambulance service available across India. Call 108 for medical emergencies including accidents, heart attacks, pregnancy complications.",
+    "phone": "108",
+    "category": "emergency",
+    "states": ["all"]
+  },
+  {
+    "id": "police",
+    "name": "Police Emergency",
+    "description": "Police emergency helpline for crime, accidents, and law and order issues. Also handles fire and medical emergencies.",
+    "phone": "112",
+    "category": "emergency",
+    "states": ["all"]
+  },
+  {
+    "id": "women-helpline",
+    "name": "Women Helpline",
+    "description": "National helpline for women in distress - domestic violence, harassment, abuse, dowry issues. Available 24/7 in multiple languages.",
+    "phone": "181",
+    "category": "women_safety",
+    "states": ["all"]
+  },
+  {
+    "id": "child-helpline",
+    "name": "Childline India",
+    "description": "24-hour helpline for children in need of care and protection. Reports child abuse, child labor, missing children, trafficking.",
+    "phone": "1098",
+    "category": "child_safety",
+    "states": ["all"]
+  },
+  {
+    "id": "kisan-call-center",
+    "name": "Kisan Call Center",
+    "description": "Free helpline for farmers to get advice on farming techniques, crop diseases, weather updates, market prices, and government schemes for agriculture.",
+    "phone": "1800-180-1551",
+    "category": "agriculture",
+    "states": ["all"]
+  },
+  {
+    "id": "ayushman-helpline",
+    "name": "Ayushman Bharat Helpline",
+    "description": "Check eligibility and get help with Ayushman Bharat PMJAY health insurance scheme. Find empanelled hospitals near you.",
+    "phone": "14555",
+    "category": "health",
+    "states": ["all"]
+  },
+  {
+    "id": "senior-citizen",
+    "name": "Elder Helpline",
+    "description": "National helpline for senior citizens facing abuse, neglect, or needing assistance with pensions, healthcare, legal matters.",
+    "phone": "14567",
+    "category": "elderly",
+    "states": ["all"]
+  },
+  {
+    "id": "mental-health",
+    "name": "Vandrevala Foundation Mental Health Helpline",
+    "description": "Free 24/7 mental health helpline. Counseling in Hindi and English for depression, anxiety, stress, suicidal thoughts.",
+    "phone": "1860-2662-345",
+    "category": "health",
+    "states": ["all"]
+  },
+  {
+    "id": "poison-center",
+    "name": "National Poison Information Centre",
+    "description": "Expert advice for poisoning emergencies - pesticides, medicines, chemicals, snake bites. Located at AIIMS Delhi.",
+    "phone": "011-26593677",
+    "category": "emergency",
+    "states": ["all"]
+  },
+  {
+    "id": "disaster",
+    "name": "National Disaster Management Helpline",
+    "description": "Helpline for natural disasters - floods, earthquakes, cyclones. Information on relief, evacuation, shelter locations.",
+    "phone": "1078",
+    "category": "emergency",
+    "states": ["all"]
+  },
+  {
+    "id": "csc-mp",
+    "name": "Common Service Center - Madhya Pradesh",
+    "description": "CSC provides government services like Aadhaar enrollment, PAN card, passport, scheme applications, banking. Find nearest CSC at locator.csccloud.in",
+    "phone": "1800-121-3468",
+    "category": "government_services",
+    "states": ["Madhya Pradesh"]
+  },
+  {
+    "id": "csc-up",
+    "name": "Common Service Center - Uttar Pradesh",
+    "description": "CSC provides government services like Aadhaar enrollment, PAN card, passport, scheme applications, banking. Find nearest CSC at locator.csccloud.in",
+    "phone": "1800-121-3468",
+    "category": "government_services",
+    "states": ["Uttar Pradesh"]
+  },
+  {
+    "id": "csc-bihar",
+    "name": "Common Service Center - Bihar",
+    "description": "CSC provides government services like Aadhaar enrollment, PAN card, passport, scheme applications, banking. Find nearest CSC at locator.csccloud.in",
+    "phone": "1800-121-3468",
+    "category": "government_services",
+    "states": ["Bihar"]
+  },
+  {
+    "id": "railway-enquiry",
+    "name": "Railway Enquiry",
+    "description": "Indian Railways enquiry for train status, PNR check, seat availability, general railway information.",
+    "phone": "139",
+    "category": "transport",
+    "states": ["all"]
+  },
+  {
+    "id": "electricity-complaint",
+    "name": "Electricity Complaint - General",
+    "description": "Report power outages, billing issues, and electrical hazards. Contact your state electricity board. General helpline varies by state.",
+    "phone": "1912",
+    "category": "utilities",
+    "states": ["all"]
+  },
+  {
+    "id": "rti-helpline",
+    "name": "RTI (Right to Information) Helpline",
+    "description": "Help with filing RTI applications to get information from government departments. Available in Hindi and English.",
+    "phone": "011-26182598",
+    "category": "government_services",
+    "states": ["all"]
+  },
+  {
+    "id": "consumer-helpline",
+    "name": "National Consumer Helpline",
+    "description": "File complaints about defective products, poor services, unfair trade practices. Free advice on consumer rights.",
+    "phone": "1800-11-4000",
+    "category": "consumer",
+    "states": ["all"]
+  },
+  {
+    "id": "cyber-crime",
+    "name": "Cyber Crime Helpline",
+    "description": "Report online fraud, UPI scams, social media harassment, identity theft, online banking fraud.",
+    "phone": "1930",
+    "category": "safety",
+    "states": ["all"]
+  },
+  {
+    "id": "blood-bank",
+    "name": "Blood Bank Helpline - Red Cross",
+    "description": "Find nearest blood bank, request blood units, blood donation camps information.",
+    "phone": "1910",
+    "category": "health",
+    "states": ["all"]
+  },
+  {
+    "id": "lpg-emergency",
+    "name": "LPG Gas Emergency",
+    "description": "Report LPG gas leaks, cylinder delivery issues, connection problems. Also for PM Ujjwala Yojana queries.",
+    "phone": "1906",
+    "category": "emergency",
+    "states": ["all"]
+  }
+]

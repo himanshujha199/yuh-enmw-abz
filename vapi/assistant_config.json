@@ -1,0 +1,18 @@
+{
+  "_comment": "Reference config. Actual config returned dynamically by /vapi/webhook on assistant-request events.",
+  "name": "Gram Sahayak",
+  "serverUrl": "https://YOUR_NGROK_URL/vapi/webhook",
+  "model": {
+    "provider": "openai",
+    "model": "gpt-4o-mini"
+  },
+  "voice": {
+    "provider": "11labs",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku"
+  },
+  "transcriber": {
+    "provider": "deepgram",
+    "language": "hi"
+  },
+  "firstMessage": "Namaste! Main Gram Sahayak hoon. Aapki kya madad kar sakti hoon?"
+}

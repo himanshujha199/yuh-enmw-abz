@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gram Sahayak — ग्राम सहायक</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --saffron: #E8842C;
+  --terracotta: #C45536;
+  --gold: #D4A843;
+  --deep-bg: #0F0B09;
+  --warm-bg: #1A1210;
+  --cream: #F5EDE0;
+  --cream-dim: #B8A998;
+  --glass: rgba(255, 240, 220, 0.06);
+  --glass-border: rgba(255, 240, 220, 0.12);
+  --glass-hover: rgba(255, 240, 220, 0.10);
+  --glow-saffron: rgba(232, 132, 44, 0.4);
+  --glow-gold: rgba(212, 168, 67, 0.3);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--deep-bg);
+  color: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hindi { font-family: 'Tiro Devanagari Hindi', serif; }
+h1, h2, h3, .display { font-family: 'Playfair Display', serif; }
+
+/* ============ GRADIENT MESH BACKGROUND ============ */
+.mesh-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.mesh-bg .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  animation: orbFloat 20s ease-in-out infinite;
+}
+.mesh-bg .orb:nth-child(1) {
+  width: 600px; height: 600px;
+  background: var(--terracotta);
+  top: -10%; left: -10%;
+  animation-delay: 0s;
+}
+.mesh-bg .orb:nth-child(2) {
+  width: 500px; height: 500px;
+  background: var(--saffron);
+  top: 40%; right: -15%;
+  animation-delay: -7s;
+  animation-duration: 25s;
+}
+.mesh-bg .orb:nth-child(3) {
+  width: 400px; height: 400px;
+  background: var(--gold);
+  bottom: -10%; left: 30%;
+  animation-delay: -14s;
+  animation-duration: 22s;
+}
+.mesh-bg .orb:nth-child(4) {
+  width: 300px; height: 300px;
+  background: #8B4513;
+  top: 60%; left: 10%;
+  animation-delay: -3s;
+  animation-duration: 28s;
+}
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(80px, -60px) scale(1.1); }
+  50% { transform: translate(-40px, 80px) scale(0.95); }
+  75% { transform: translate(60px, 40px) scale(1.05); }
+}
+
+/* ============ GRAIN OVERLAY ============ */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px;
+}
+
+/* ============ FIREFLY PARTICLES ============ */
+.fireflies {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.firefly {
+  position: absolute;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 12px 4px var(--glow-gold);
+  animation: fireflyDrift linear infinite, fireflyGlow ease-in-out infinite;
+}
+
+@keyframes fireflyDrift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(100px, -150px); }
+  50% { transform: translate(-80px, -300px); }
+  75% { transform: translate(120px, -450px); }
+  100% { transform: translate(0, -600px); }
+}
+@keyframes fireflyGlow {
+  0%, 100% { opacity: 0; }
+  30%, 70% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* ============ NAVBAR ============ */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1.2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.4s, backdrop-filter 0.4s;
+}
+nav.scrolled {
+  background: rgba(15, 11, 9, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--cream);
+}
+.nav-logo .icon {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+.nav-logo span {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--cream-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1.5px;
+  background: var(--saffron);
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--cream); }
+.nav-links a:hover::after { width: 100%; }
+
+/* ============ CONTENT WRAPPER ============ */
+.content { position: relative; z-index: 2; }
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  position: relative;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  color: var(--cream-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+.hero-badge .dot {
+  width: 6px; height: 6px;
+  background: #4ADE80;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4); }
+  50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s forwards;
+}
+.hero h1 .gradient-text {
+  background: linear-gradient(135deg, var(--saffron) 0%, var(--gold) 50%, var(--terracotta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-hindi {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: clamp(1.5rem, 3.5vw, 3rem);
+  color: var(--cream-dim);
+  font-weight: 400;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.6s forwards;
+}
+.hero-sub {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--cream-dim);
+  max-width: 600px;
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.8s forwards;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 1s forwards;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.2rem;
+  background: linear-gradient(135deg, var(--saffron), var(--terracotta));
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  box-shadow: 0 4px 24px var(--glow-saffron);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 40px var(--glow-saffron);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.2rem;
+  background: var(--glass);
+  color: var(--cream);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background: var(--glass-hover);
+  border-color: rgba(255, 240, 220, 0.2);
+  transform: translateY(-2px);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cream-dim);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeUp 0.8s 1.4s forwards;
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--cream-dim), transparent);
+  animation: scrollPulse 2s infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ STATS BAR ============ */
+.stats-bar {
+  padding: 0 3rem;
+  margin-top: -2rem;
+}
+.stats-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  backdrop-filter: blur(20px);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.stat {
+  text-align: center;
+  position: relative;
+}
+.stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 20%;
+  height: 60%;
+  width: 1px;
+  background: var(--glass-border);
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--cream-dim);
+  margin-top: 0.3rem;
+  font-weight: 300;
+}
+
+/* ============ SECTION SHARED ============ */
+section { padding: 8rem 3rem; }
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--saffron);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.section-label::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--saffron);
+}
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+.section-desc {
+  font-size: 1.1rem;
+  color: var(--cream-dim);
+  max-width: 550px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ============ REVEAL ANIMATIONS ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============ HOW IT WORKS ============ */
+.how-it-works { max-width: 1200px; margin: 0 auto; }
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+.step-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.step-card:hover {
+  background: var(--glass-hover);
+  border-color: rgba(255, 240, 220, 0.2);
+  transform: translateY(-6px);
+}
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--saffron), var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.step-card:hover::before { opacity: 1; }
+.step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(232, 132, 44, 0.1);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.step-icon {
+  width: 56px; height: 56px;
+  background: linear-gradient(135deg, rgba(232, 132, 44, 0.15), rgba(212, 168, 67, 0.1));
+  border: 1px solid rgba(232, 132, 44, 0.2);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.step-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.01em;
+}
+.step-card p {
+  color: var(--cream-dim);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* ============ DOMAINS ============ */
+.domains { max-width: 1200px; margin: 0 auto; }
+.domains-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+.domain-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+.domain-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 240, 220, 0.2);
+}
+.domain-card .domain-glow {
+  position: absolute;
+  top: -50%; right: -50%;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.domain-card:hover .domain-glow { opacity: 0.15; }
+.domain-card:nth-child(1) .domain-glow { background: #4ADE80; }
+.domain-card:nth-child(2) .domain-glow { background: #F87171; }
+.domain-card:nth-child(3) .domain-glow { background: #60A5FA; }
+.domain-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+.domain-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+.domain-card:nth-child(1) .domain-icon { background: rgba(74, 222, 128, 0.12); border: 1px solid rgba(74, 222, 128, 0.2); }
+.domain-card:nth-child(2) .domain-icon { background: rgba(248, 113, 113, 0.12); border: 1px solid rgba(248, 113, 113, 0.2); }
+.domain-card:nth-child(3) .domain-icon { background: rgba(96, 165, 250, 0.12); border: 1px solid rgba(96, 165, 250, 0.2); }
+.domain-count {
+  font-size: 0.8rem;
+  color: var(--cream-dim);
+  background: rgba(255,255,255,0.05);
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+}
+.domain-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.domain-card p {
+  font-size: 0.9rem;
+  color: var(--cream-dim);
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+.domain-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.domain-tag {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--cream-dim);
+}
+
+/* ============ DEMO SECTION ============ */
+.demo-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.demo-container {
+  margin-top: 4rem;
+  background: linear-gradient(135deg, rgba(232, 132, 44, 0.08), rgba(196, 85, 54, 0.05));
+  border: 1px solid rgba(232, 132, 44, 0.15);
+  border-radius: 32px;
+  padding: 4rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.demo-container::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(135deg, var(--saffron), transparent 40%, transparent 60%, var(--gold));
+  border-radius: 33px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Call Button */
+.call-btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.call-btn {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, var(--saffron), var(--terracotta));
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+  box-shadow: 0 8px 40px var(--glow-saffron);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.call-btn::before, .call-btn::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--saffron);
+  opacity: 0;
+  animation: callRing 2.5s infinite;
+}
+.call-btn::after {
+  inset: -20px;
+  animation-delay: 0.5s;
+}
+@keyframes callRing {
+  0% { opacity: 0.6; transform: scale(0.95); }
+  100% { opacity: 0; transform: scale(1.3); }
+}
+.call-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 60px var(--glow-saffron);
+}
+.call-btn.active {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+  box-shadow: 0 8px 40px rgba(239, 68, 68, 0.4);
+}
+.call-btn.active::before, .call-btn.active::after {
+  border-color: #EF4444;
+}
+
+.call-status {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.call-status .hindi {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--cream-dim);
+  margin-top: 0.3rem;
+}
+
+/* Waveform */
+.waveform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 60px;
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.waveform.active { opacity: 1; }
+.wave-bar {
+  width: 4px;
+  background: linear-gradient(to top, var(--saffron), var(--gold));
+  border-radius: 4px;
+  transition: height 0.15s;
+}
+
+.demo-hint {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--cream-dim);
+  font-weight: 300;
+}
+
+/* Transcript Box */
+.transcript-box {
+  margin-top: 2rem;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  min-height: 80px;
+  text-align: left;
+  display: none;
+}
+.transcript-box.active { display: block; }
+.transcript-label {
+  font-size: 0.75rem;
+  color: var(--saffron);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.transcript-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--cream-dim);
+  font-weight: 300;
+}
+.transcript-content .user-msg {
+  color: var(--cream);
+  font-weight: 500;
+}
+.transcript-content .bot-msg {
+  color: var(--gold);
+}
+
+/* ============ TECH STACK ============ */
+.tech-section { max-width: 1200px; margin: 0 auto; }
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+.tech-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+.tech-card:hover {
+  background: var(--glass-hover);
+  transform: translateY(-4px);
+}
+.tech-logo {
+  width: 56px; height: 56px;
+  margin: 0 auto 1rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.tech-card h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.tech-card p {
+  font-size: 0.8rem;
+  color: var(--cream-dim);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ============ CTA SECTION ============ */
+.cta-section {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.cta-box {
+  background: linear-gradient(135deg, rgba(232, 132, 44, 0.12), rgba(196, 85, 54, 0.08));
+  border: 1px solid rgba(232, 132, 44, 0.2);
+  border-radius: 32px;
+  padding: 5rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.cta-box::after {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 300px; height: 300px;
+  background: var(--saffron);
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.1;
+}
+.cta-box h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+.cta-box p {
+  color: var(--cream-dim);
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+/* ============ FOOTER ============ */
+footer {
+  padding: 3rem;
+  border-top: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+footer p {
+  font-size: 0.85rem;
+  color: var(--cream-dim);
+  font-weight: 300;
+}
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+.footer-links a {
+  color: var(--cream-dim);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--cream); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  section { padding: 5rem 1.5rem; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 2rem; padding: 2rem; }
+  .stat:nth-child(2)::after { display: none; }
+  .steps-grid, .domains-grid { grid-template-columns: 1fr; }
+  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+  .demo-container { padding: 3rem 1.5rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; }
+  .stats-bar { padding: 0 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Background Effects -->
+<div class="mesh-bg">
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+</div>
+<div class="grain"></div>
+<div class="fireflies" id="fireflies"></div>
+
+<!-- Navbar -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="icon">🏘</div>
+    <span>Gram Sahayak</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#how">How it Works</a></li>
+    <li><a href="#domains">Domains</a></li>
+    <li><a href="#demo">Live Demo</a></li>
+    <li><a href="#tech">Tech Stack</a></li>
+  </ul>
+</nav>
+
+<!-- Content -->
+<div class="content">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Voice AI for Social Impact
+    </div>
+    <h1>
+      <span class="gradient-text">Gram Sahayak</span>
+    </h1>
+    <div class="hero-hindi">ग्राम सहायक — गाँव का अपना सहायक</div>
+    <p class="hero-sub">
+      A multilingual voice AI assistant that helps 800M+ rural Indians access government schemes, healthcare guidance, and emergency services — through a simple phone call, in their own language.
+    </p>
+    <div class="hero-cta">
+      <a href="#demo" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Try Live Demo
+      </a>
+      <a href="#how" class="btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        Learn More
+      </a>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar reveal">
+    <div class="stats-inner">
+      <div class="stat">
+        <div class="stat-num" data-target="800">0</div>
+        <div class="stat-label">Million Rural Indians</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-target="1300">0</div>
+        <div class="stat-label">Govt Schemes Available</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-target="5">0</div>
+        <div class="stat-label">% Scheme Awareness</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-target="3">0</div>
+        <div class="stat-label">Languages Supported</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How It Works -->
+  <section id="how" class="how-it-works">
+    <div class="reveal">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Three steps.<br>One phone call.</h2>
+      <p class="section-desc">No app download. No internet. No literacy required. Just a phone call in your language.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <div class="step-icon">📞</div>
+        <h3>Call & Speak</h3>
+        <p>Dial the Gram Sahayak number and speak naturally in Hindi, Tamil, or Telugu. Describe your situation — the AI understands context, not just keywords.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <div class="step-icon">🔍</div>
+        <h3>Instant Matching</h3>
+        <p>Our semantic engine searches across government schemes, health protocols, and emergency services to find exactly what's relevant to your profile.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <div class="step-icon">💡</div>
+        <h3>Guided Action</h3>
+        <p>Get step-by-step guidance in your language — which documents to bring, where to apply, what to do next. The agent remembers you for follow-ups.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Domains -->
+  <section id="domains" class="domains">
+    <div class="reveal" style="text-align: center;">
+      <div class="section-label">Knowledge Domains</div>
+      <h2 class="section-title">One assistant.<br>Three life-critical domains.</h2>
+      <p class="section-desc" style="margin: 0 auto;">Powered by semantic search across a curated, multilingual knowledge base with real-time retrieval.</p>
+    </div>
+    <div class="domains-grid">
+      <div class="domain-card reveal reveal-delay-1">
+        <div class="domain-glow"></div>
+        <div class="domain-header">
+          <div class="domain-icon">🏛</div>
+          <span class="domain-count">20 schemes</span>
+        </div>
+        <h3>Government Schemes</h3>
+        <p>PM-KISAN, Ayushman Bharat, MGNREGA, and more. Eligibility matching based on your occupation, land, family size, and state.</p>
+        <div class="domain-tags">
+          <span class="domain-tag">PM-KISAN</span>
+          <span class="domain-tag">Ayushman Bharat</span>
+          <span class="domain-tag">Ration Card</span>
+          <span class="domain-tag">MUDRA</span>
+          <span class="domain-tag">+16 more</span>
+        </div>
+      </div>
+      <div class="domain-card reveal reveal-delay-2">
+        <div class="domain-glow"></div>
+        <div class="domain-header">
+          <div class="domain-icon">🏥</div>
+          <span class="domain-count">15 protocols</span>
+        </div>
+        <h3>Healthcare First-Aid</h3>
+        <p>Symptom-based triage with severity assessment. First-aid guidance for common emergencies with mandatory doctor referral.</p>
+        <div class="domain-tags">
+          <span class="domain-tag">Fever</span>
+          <span class="domain-tag">Snake Bite</span>
+          <span class="domain-tag">Burns</span>
+          <span class="domain-tag">Pregnancy</span>
+          <span class="domain-tag">+11 more</span>
+        </div>
+      </div>
+      <div class="domain-card reveal reveal-delay-3">
+        <div class="domain-glow"></div>
+        <div class="domain-header">
+          <div class="domain-icon">🆘</div>
+          <span class="domain-count">20 services</span>
+        </div>
+        <h3>Emergency Services</h3>
+        <p>Ambulance, police, women's helpline, child protection, disaster management — instant access to critical helpline numbers.</p>
+        <div class="domain-tags">
+          <span class="domain-tag">108 Ambulance</span>
+          <span class="domain-tag">181 Women</span>
+          <span class="domain-tag">1098 Child</span>
+          <span class="domain-tag">CSC</span>
+          <span class="domain-tag">+16 more</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Demo -->
+  <section id="demo" class="demo-section">
+    <div class="reveal">
+      <div class="section-label">Live Demo</div>
+      <h2 class="section-title">Experience it yourself.</h2>
+      <p class="section-desc" style="margin: 0 auto;">Click the button below and speak in Hindi. Ask about government schemes, health concerns, or emergency services.</p>
+    </div>
+    <div class="demo-container reveal reveal-delay-1">
+      <div class="call-btn-wrapper">
+        <button class="call-btn" id="callBtn" onclick="toggleCall()">
+          <svg id="phoneIcon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </button>
+        <div class="call-status" id="callStatus">
+          Tap to start speaking
+          <span class="hindi">बात करने के लिए दबाएँ</span>
+        </div>
+      </div>
+
+      <div class="waveform" id="waveform"></div>
+
+      <div class="transcript-box" id="transcriptBox">
+        <div class="transcript-label">Live Conversation</div>
+        <div class="transcript-content" id="transcriptContent"></div>
+      </div>
+
+      <p class="demo-hint">
+        Try saying: <em>"Mera naam Ramesh hai, main kisan hoon, mujhe PM-KISAN ke baare mein batao"</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section id="tech" class="tech-section">
+    <div class="reveal" style="text-align: center;">
+      <div class="section-label">Architecture</div>
+      <h2 class="section-title">Built with purpose.</h2>
+      <p class="section-desc" style="margin: 0 auto;">Every technology choice serves accessibility. One knowledge brain, many languages, zero barriers.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card reveal reveal-delay-1">
+        <div class="tech-logo">🎙</div>
+        <h4>Vapi</h4>
+        <p>Voice AI platform handling STT, TTS, and conversation orchestration in Hindi</p>
+      </div>
+      <div class="tech-card reveal reveal-delay-2">
+        <div class="tech-logo">🔮</div>
+        <h4>Qdrant</h4>
+        <p>Vector database for semantic search across schemes, health, and services</p>
+      </div>
+      <div class="tech-card reveal reveal-delay-3">
+        <div class="tech-logo">⚡</div>
+        <h4>FastAPI</h4>
+        <p>Lightweight Python backend processing Vapi webhooks and Qdrant queries</p>
+      </div>
+      <div class="tech-card reveal reveal-delay-4">
+        <div class="tech-logo">🌐</div>
+        <h4>Multilingual AI</h4>
+        <p>Cross-lingual embeddings — curate once in English, serve in any Indian language</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-box reveal">
+      <h2 class="section-title">No app. No internet.<br>No literacy required.</h2>
+      <p>800 million Indians deserve access to the schemes that were made for them. Gram Sahayak bridges the gap with just a phone call.</p>
+      <a href="#demo" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Try the Demo Now
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Gram Sahayak — Built with ❤ for India's villages</p>
+    <div class="footer-links">
+      <a href="https://github.com" target="_blank">GitHub</a>
+      <a href="#tech">Architecture</a>
+      <a href="#demo">Demo</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+// ============ FIREFLIES ============
+(function createFireflies() {
+  const container = document.getElementById('fireflies');
+  for (let i = 0; i < 20; i++) {
+    const fly = document.createElement('div');
+    fly.className = 'firefly';
+    fly.style.left = Math.random() * 100 + '%';
+    fly.style.top = (60 + Math.random() * 40) + '%';
+    fly.style.animationDuration = (12 + Math.random() * 18) + 's,' + (3 + Math.random() * 4) + 's';
+    fly.style.animationDelay = (-Math.random() * 20) + 's,' + (-Math.random() * 4) + 's';
+    fly.style.width = (2 + Math.random() * 3) + 'px';
+    fly.style.height = fly.style.width;
+    container.appendChild(fly);
+  }
+})();
+
+// ============ NAVBAR SCROLL ============
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ============ REVEAL ON SCROLL ============
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ============ COUNTER ANIMATION ============
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.querySelectorAll('.stat-num').forEach(num => {
+      const target = parseInt(num.dataset.target);
+      const duration = 2000;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        num.textContent = Math.floor(eased * target) + (target >= 100 ? '+' : '');
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+    counterObserver.unobserve(entry.target);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stats-inner').forEach(el => counterObserver.observe(el));
+
+// ============ WAVEFORM ============
+(function createWaveform() {
+  const wf = document.getElementById('waveform');
+  for (let i = 0; i < 40; i++) {
+    const bar = document.createElement('div');
+    bar.className = 'wave-bar';
+    bar.style.height = '4px';
+    wf.appendChild(bar);
+  }
+})();
+
+let waveInterval;
+function animateWaveform(active) {
+  const bars = document.querySelectorAll('.wave-bar');
+  if (active) {
+    document.getElementById('waveform').classList.add('active');
+    waveInterval = setInterval(() => {
+      bars.forEach((bar, i) => {
+        const h = 4 + Math.random() * 50 * Math.sin((Date.now() / 200 + i) * 0.5) ** 2;
+        bar.style.height = Math.max(4, h) + 'px';
+      });
+    }, 80);
+  } else {
+    clearInterval(waveInterval);
+    document.getElementById('waveform').classList.remove('active');
+    bars.forEach(bar => bar.style.height = '4px');
+  }
+}
+
+// ============ VAPI INTEGRATION ============
+let isCallActive = false;
+
+// Set these to real values to enable live Vapi calls
+const VAPI_PUBLIC_KEY = "9a05e800-6a2e-456b-a8c3-270f0495a201";
+const VAPI_ASSISTANT_ID = "5b0e2245-21dd-4dbf-98e7-226f80dec5e7";
+
+function toggleCall() {
+  const btn = document.getElementById('callBtn');
+  const status = document.getElementById('callStatus');
+  const transcript = document.getElementById('transcriptBox');
+  const content = document.getElementById('transcriptContent');
+
+  if (!isCallActive) {
+    isCallActive = true;
+    btn.classList.add('active');
+    document.getElementById('phoneIcon').innerHTML = '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>';
+    status.innerHTML = 'Connecting...<span class="hindi">जोड़ रहे हैं...</span>';
+    animateWaveform(true);
+    transcript.classList.add('active');
+    content.innerHTML = '<p style="color: var(--cream-dim); font-style: italic;">Waiting for connection...</p>';
+
+    // Demo mode — simulate a realistic conversation
+    runDemoMode(status, content);
+  } else {
+    endCall();
+  }
+}
+
+function endCall() {
+  isCallActive = false;
+  const btn = document.getElementById('callBtn');
+  const status = document.getElementById('callStatus');
+  btn.classList.remove('active');
+  document.getElementById('phoneIcon').innerHTML = '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>';
+  status.innerHTML = 'Call ended<span class="hindi">कॉल समाप्त</span>';
+  animateWaveform(false);
+}
+
+function runDemoMode(status, content) {
+  const conversation = [
+    { delay: 1500, role: 'system', text: 'Connected to Gram Sahayak' },
+    { delay: 3000, role: 'bot', text: 'Namaste! Main Gram Sahayak hoon. Aapki kya madad kar sakti hoon?' },
+    { delay: 7000, role: 'user', text: 'Mera naam Ramesh hai, main kisan hoon UP se. Mere bachche ko bukhar hai.' },
+    { delay: 11000, role: 'bot', text: 'Namaste Ramesh ji! Bachche ke bukhar ke baare mein — bachche ki umar kitni hai aur bukhar kitne din se hai?' },
+    { delay: 15000, role: 'user', text: '5 saal ka hai, 2 din se bukhar hai.' },
+    { delay: 19000, role: 'bot', text: 'Ramesh ji, bachche ko paracetamol syrup dijiye — 10-15mg per kg weight, har 6 ghante mein. ORS ya saaf paani pilate rahiye. Agar 3 din se zyada bukhar rahe, toh nearest hospital zaroor jayein. Kya aapko kisi sarkari yojana ke baare mein bhi jaanna hai?' },
+    { delay: 25000, role: 'user', text: 'Haan, PM-KISAN ke baare mein batao.' },
+    { delay: 29000, role: 'bot', text: 'PM-KISAN mein aapko saal mein Rs 6000 milte hain — 3 kiston mein Rs 2000. Iske liye Aadhaar card, zameen ke kaagaz, aur bank account chahiye. Nearest CSC ya pmkisan.gov.in par apply kar sakte hain. Helpline: 155261. Kya aur kuch madad chahiye?' },
+  ];
+
+  conversation.forEach(msg => {
+    setTimeout(() => {
+      if (!isCallActive) return;
+      if (msg.role === 'system') {
+        status.innerHTML = `Connected — Speak now!<span class="hindi">बोलिए, हम सुन रहे हैं</span>`;
+        content.innerHTML = '';
+      } else if (msg.role === 'user') {
+        status.innerHTML = `Listening...<span class="hindi">सुन रहे हैं...</span>`;
+        content.innerHTML += `<p class="user-msg" style="margin-bottom:0.8rem">🗣 ${msg.text}</p>`;
+      } else {
+        status.innerHTML = `Speaking...<span class="hindi">बोल रहे हैं...</span>`;
+        content.innerHTML += `<p class="bot-msg" style="margin-bottom:0.8rem">🤖 ${msg.text}</p>`;
+      }
+      const box = document.getElementById('transcriptContent');
+      box.scrollTop = box.scrollHeight;
+    }, msg.delay);
+  });
+}
+</script>
+
+</body>
+</html>
