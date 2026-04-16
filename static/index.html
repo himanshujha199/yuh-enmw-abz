@@ -1189,22 +1189,54 @@ function animateWaveform(active) {
 
 // ============ VAPI INTEGRATION ============
 let isCallActive = false;
-let vapiSDK = null;
+let vapi = null;
 
 const VAPI_PUBLIC_KEY = "9a05e800-6a2e-456b-a8c3-270f0495a201";
 const VAPI_ASSISTANT_ID = "6526039d-0b46-4fbd-bd15-671028eee6c1";
 
-// Load Vapi Web SDK
-function loadVapiSDK() {
-  return new Promise((resolve, reject) => {
-    if (window.Vapi) { resolve(); return; }
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js';
-    script.defer = true;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error('Failed to load Vapi SDK'));
-    document.head.appendChild(script);
+// Load @vapi-ai/web SDK as ES module
+async function getVapi() {
+  if (vapi) return vapi;
+  const module = await import('https://cdn.jsdelivr.net/npm/@vapi-ai/web@latest/+esm');
+  const Vapi = module.default.default || module.default;
+  vapi = new Vapi(VAPI_PUBLIC_KEY);
+
+  const status = document.getElementById('callStatus');
+  const content = document.getElementById('transcriptContent');
+
+  vapi.on('call-start', () => {
+    status.innerHTML = 'Connected — Speak now!<span class="hindi">बोलिए, हम सुन रहे हैं</span>';
+    content.innerHTML = '';
   });
+
+  vapi.on('speech-start', () => {
+    status.innerHTML = 'Listening...<span class="hindi">सुन रहे हैं...</span>';
+  });
+
+  vapi.on('speech-end', () => {
+    status.innerHTML = 'Thinking...<span class="hindi">समझ रहे हैं...</span>';
+  });
+
+  vapi.on('message', (msg) => {
+    if (msg.type === 'transcript' && msg.transcriptType === 'final') {
+      if (msg.role === 'user') {
+        content.innerHTML += '<p class="user-msg" style="margin-bottom:0.8rem">🗣 ' + msg.transcript + '</p>';
+      } else if (msg.role === 'assistant') {
+        content.innerHTML += '<p class="bot-msg" style="margin-bottom:0.8rem">🤖 ' + msg.transcript + '</p>';
+      }
+      content.scrollTop = content.scrollHeight;
+    }
+  });
+
+  vapi.on('call-end', () => {
+    endCall();
+  });
+
+  vapi.on('error', (err) => {
+    console.error('Vapi error:', err);
+  });
+
+  return vapi;
 }
 
 async function toggleCall() {
@@ -1223,50 +1255,11 @@ async function toggleCall() {
     content.innerHTML = '<p style="color: var(--cream-dim); font-style: italic;">Requesting microphone access...</p>';
 
     try {
-      await loadVapiSDK();
-
-      if (!vapiSDK) {
-        vapiSDK = new Vapi(VAPI_PUBLIC_KEY);
-
-        vapiSDK.on('call-start', () => {
-          status.innerHTML = 'Connected — Speak now!<span class="hindi">बोलिए, हम सुन रहे हैं</span>';
-          content.innerHTML = '';
-        });
-
-        vapiSDK.on('speech-start', () => {
-          status.innerHTML = 'Listening...<span class="hindi">सुन रहे हैं...</span>';
-        });
-
-        vapiSDK.on('speech-end', () => {
-          status.innerHTML = 'Thinking...<span class="hindi">समझ रहे हैं...</span>';
-        });
-
-        vapiSDK.on('message', (msg) => {
-          if (msg.type === 'transcript' && msg.transcriptType === 'final') {
-            if (msg.role === 'user') {
-              content.innerHTML += '<p class="user-msg" style="margin-bottom:0.8rem">🗣 ' + msg.transcript + '</p>';
-            } else if (msg.role === 'assistant') {
-              content.innerHTML += '<p class="bot-msg" style="margin-bottom:0.8rem">🤖 ' + msg.transcript + '</p>';
-            }
-            content.scrollTop = content.scrollHeight;
-          }
-        });
-
-        vapiSDK.on('call-end', () => {
-          endCall();
-        });
-
-        vapiSDK.on('error', (err) => {
-          console.error('Vapi error:', err);
-          status.innerHTML = 'Error — retrying...<span class="hindi">कोशिश कर रहे हैं...</span>';
-        });
-      }
-
-      await vapiSDK.start(VAPI_ASSISTANT_ID);
-
+      const vapiClient = await getVapi();
+      await vapiClient.start(VAPI_ASSISTANT_ID);
     } catch (err) {
       console.error('Call failed:', err);
-      status.innerHTML = 'Connection failed — running demo<span class="hindi">डेमो चला रहे हैं</span>';
+      status.innerHTML = 'Running demo mode<span class="hindi">डेमो चला रहे हैं</span>';
       runDemoMode(status, content);
     }
   } else {
@@ -1282,8 +1275,8 @@ function endCall() {
   document.getElementById('phoneIcon').innerHTML = '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>';
   status.innerHTML = 'Call ended<span class="hindi">कॉल समाप्त</span>';
   animateWaveform(false);
-  if (vapiSDK) {
-    try { vapiSDK.stop(); } catch(e) {}
+  if (vapi) {
+    try { vapi.stop(); } catch(e) {}
   }
 }
 
