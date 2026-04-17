@@ -40,25 +40,15 @@ def filter_and_search_schemes(
     occupation: str = None,
     land_acres: float = None,
     state: str = None,
-    limit: int = 3,
+    limit: int = 5,
 ) -> list[dict]:
-    conditions = []
-
+    # Build a richer query by including occupation and state context
+    enriched_query = query_text
     if occupation:
-        conditions.append(
-            FieldCondition(
-                key="eligibility.occupation",
-                match=MatchAny(any=[occupation, "any"]),
-            )
-        )
+        enriched_query += f" {occupation}"
+    if state:
+        enriched_query += f" {state}"
 
-    if land_acres is not None:
-        conditions.append(
-            FieldCondition(
-                key="eligibility.land_max_acres",
-                range=Range(gte=land_acres),
-            )
-        )
-
-    query_filter = Filter(must=conditions) if conditions else None
-    return search_collection("schemes", query_text, limit, query_filter)
+    # Pure semantic search — the bilingual descriptions handle matching
+    # Filters were too strict and excluded universal schemes
+    return search_collection("schemes", enriched_query, limit)
