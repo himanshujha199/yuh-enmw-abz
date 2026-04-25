@@ -1,6 +1,6 @@
 """Tool functions that Vapi calls via function-call webhooks."""
 import json
-from src.db import get_user, upsert_user, log_query, get_recent_queries
+from src.db import get_user, upsert_user, log_query, get_recent_queries, upsert_form_submission
 from src.qdrant_client import search_collection, filter_and_search_schemes
 from src.config import USER_DATA_PATH
 
@@ -13,6 +13,7 @@ def handle_function_call(function_name: str, parameters: dict) -> str:
         "search_services": _search_services,
         "get_user_profile": _get_user_profile,
         "save_user_profile": _save_user_profile,
+        "submit_scheme_form": _submit_scheme_form,
     }
     handler = handlers.get(function_name)
     if not handler:
@@ -101,3 +102,37 @@ def _save_user_profile(params: dict) -> str:
         family_size=params.get("family_size"),
     )
     return f"Profile saved successfully for {params.get('name', phone)}"
+
+
+def _submit_scheme_form(params: dict) -> str:
+    phone = params.get("phone")
+    scheme_id = params.get("scheme_id")
+    scheme_name = params.get("scheme_name", scheme_id)
+    form_data = params.get("form_data", {})
+    docs_status = params.get("documents_status", {})
+    notes = params.get("notes", "")
+
+    if not phone or not scheme_id:
+        return "Error: phone number and scheme_id are required"
+
+    entry = upsert_form_submission(
+        db_path=USER_DATA_PATH,
+        phone=phone,
+        scheme_id=scheme_id,
+        scheme_name=scheme_name,
+        form_data=form_data,
+        documents_status=docs_status,
+        notes=notes,
+    )
+
+    missing_docs = [k for k, v in docs_status.items() if v != "available"]
+    missing_msg = ""
+    if missing_docs:
+        missing_msg = f" Ye documents abhi nahi hain, pehle jodein: {', '.join(missing_docs)}."
+
+    return (
+        f"Aapka aavedan save ho gaya. "
+        f"Scheme: {scheme_name}. "
+        f"Form ID: {entry['id'][:8]}.{missing_msg} "
+        f"CSC ya Gram Panchayat mein jaakar kaam complete karein."
+    )
