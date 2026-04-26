@@ -287,10 +287,11 @@ def _handle_assistant_request(message: dict) -> dict:
 
 
 def _handle_function_call(message: dict) -> dict:
-    """Execute a tool function and return the result."""
+    """Execute a tool function and return the result in Vapi's required format."""
     func = message.get("functionCall", {})
     name = func.get("name", "")
     params = func.get("parameters", {})
+    tool_call_id = func.get("id", "")
 
     # Inject phone number from call metadata if not in params
     call = message.get("call", {})
@@ -299,7 +300,17 @@ def _handle_function_call(message: dict) -> dict:
         params["phone"] = customer["number"]
 
     result = handle_function_call(name, params)
-    return {"result": result}
+    # Vapi requires: { "results": [{ "toolCallId": "...", "result": "single-line string" }] }
+    # Result must be a single-line string (no \n characters)
+    result_single_line = result.replace("\n", " ").replace("\r", " ") if result else ""
+    return {
+        "results": [
+            {
+                "toolCallId": tool_call_id,
+                "result": result_single_line,
+            }
+        ]
+    }
 
 
 def _handle_end_of_call(message: dict) -> dict:
