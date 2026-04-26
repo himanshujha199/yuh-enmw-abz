@@ -1,162 +1,266 @@
 [
   {
-    "id": "ambulance",
-    "name": "National Ambulance Service",
-    "description": "Free emergency ambulance service available across India. Call 108 for medical emergencies including accidents, heart attacks, pregnancy complications.",
+    "id": "ambulance-108",
+    "name": "Emergency Ambulance - 108",
+    "name_hi": "आपातकालीन एम्बुलेंस - 108",
+    "description": "Free 24/7 emergency ambulance for medical emergencies, accidents, pregnancy complications, fire. Available across all states in India. Fleet includes basic and advanced life support ambulances. Police, fire, and medical combined emergency response.",
     "phone": "108",
+    "alternate_phone": "112",
     "category": "emergency",
-    "states": ["all"]
+    "states": ["all"],
+    "availability": "24/7 across all states"
   },
   {
-    "id": "police",
-    "name": "Police Emergency",
-    "description": "Police emergency helpline for crime, accidents, and law and order issues. Also handles fire and medical emergencies.",
+    "id": "national-emergency-112",
+    "name": "National Emergency Number - 112",
+    "name_hi": "राष्ट्रीय आपातकालीन नंबर - 112",
+    "description": "Single emergency number for police, fire, and ambulance. Dial 112 from any phone. Women can specifically press 1 after call connects for police response. Available in all states.接通后按1转警局。",
     "phone": "112",
     "category": "emergency",
-    "states": ["all"]
+    "states": ["all"],
+    "feature": "Women safety: press 1 after connecting for police"
   },
   {
-    "id": "women-helpline",
-    "name": "Women Helpline",
-    "description": "National helpline for women in distress - domestic violence, harassment, abuse, dowry issues. Available 24/7 in multiple languages.",
+    "id": "women-helpline-181",
+    "name": "Women Helpline - 181",
+    "name_hi": "महिला हेल्पलाइन - 181",
+    "description": "24/7 national women helpline for domestic violence, harassment, abuse, dowry issues, cyber crime against women. Links callers to police, shelter homes, legal aid. Free, confidential, in Hindi and other regional languages. महिलाओं के लिए 24/7 मुफ्त हेल्पलाइन।",
     "phone": "181",
+    "category": "women_safety",
+    "states": ["all"],
+    "availability": "24/7 pan-India"
+  },
+  {
+    "id": "women-helpline-1091",
+    "name": "Women Helpline - 1091 (Delhi/State-specific)",
+    "name_hi": "महिला हेल्पलाइन - 1091",
+    "description": "Old women emergency helpline number in some states. In Delhi and some states, 1091 connects to dedicated women police helpline for immediate police assistance and counseling.",
+    "phone": "1091",
     "category": "women_safety",
     "states": ["all"]
   },
   {
-    "id": "child-helpline",
-    "name": "Childline India",
-    "description": "24-hour helpline for children in need of care and protection. Reports child abuse, child labor, missing children, trafficking.",
+    "id": "child-helpline-1098",
+    "name": "Child Helpline - 1098",
+    "name_hi": "बाल हेल्पलाइन - 1098",
+    "description": "24-hour helpline for children in need of care, protection, and rescue. Handles child labor, trafficking, missing children, abuse, child marriage. ASHA workers and police respond. Free, confidential, in multiple languages. बच्चों के लिए 24/7 हेल्पलाइन।",
     "phone": "1098",
     "category": "child_safety",
+    "states": ["all"],
+    "availability": "24/7"
+  },
+  {
+    "id": "police-100",
+    "name": "Police Emergency - 100",
+    "name_hi": "पुलिस आपातकाल - 100",
+    "description": "Police emergency helpline for crime reporting, law and order issues, accident reporting. For non-life-threatening emergencies. For life-threatening situations, dial 112 which has faster response.",
+    "phone": "100",
+    "alternate_phone": "112",
+    "category": "police",
+    "states": ["all"]
+  },
+  {
+    "id": "fire-brigade-101",
+    "name": "Fire Brigade - 101",
+    "name_hi": "दमकल - 101",
+    "description": "Fire emergency helpline. For building fires, vehicle fires, electrical fires, gas leaks. Available in all cities and most towns. Call 101 for fire brigade response.",
+    "phone": "101",
+    "category": "fire",
     "states": ["all"]
   },
   {
     "id": "kisan-call-center",
-    "name": "Kisan Call Center",
-    "description": "Free helpline for farmers to get advice on farming techniques, crop diseases, weather updates, market prices, and government schemes for agriculture.",
+    "name": "Kisan Call Center - 1800-180-1551",
+    "name_hi": "किसान कॉल सेंटर",
+    "description": "Free helpline for farmers. Get advice on farming techniques, crop diseases, weather updates, market prices, government scheme information. Available in Hindi and regional languages. Expert agricultural officers answer queries. किसानों के लिए मुफ्त हेल्पलाइन।",
     "phone": "1800-180-1551",
     "category": "agriculture",
-    "states": ["all"]
+    "states": ["all"],
+    "availability": "Mon-Sat, 9am-6pm"
   },
   {
-    "id": "ayushman-helpline",
-    "name": "Ayushman Bharat Helpline",
-    "description": "Check eligibility and get help with Ayushman Bharat PMJAY health insurance scheme. Find empanelled hospitals near you.",
+    "id": "ayushman-helpline-14555",
+    "name": "Ayushman Bharat Helpline - 14555",
+    "name_hi": "आयुष्मान भारत हेल्पलाइन - 14555",
+    "description": "Check eligibility for Ayushman Bharat PMJAY health insurance (Rs 5 lakh/year coverage). Find empanelled hospitals near you. Get help with Ayushman Card enrollment. Available in Hindi and English. आयुष्मान पात्रता जांचें।",
     "phone": "14555",
     "category": "health",
-    "states": ["all"]
+    "states": ["all"],
+    "availability": "24/7"
   },
   {
-    "id": "senior-citizen",
-    "name": "Elder Helpline",
-    "description": "National helpline for senior citizens facing abuse, neglect, or needing assistance with pensions, healthcare, legal matters.",
+    "id": "senior-citizen-helpline-14567",
+    "name": "Elder Helpline - 14567",
+    "name_hi": "वरिष्ठ नागरिक हेल्पलाइन - 14567",
+    "description": "National helpline for senior citizens facing abuse, neglect, or needing assistance with pensions, healthcare, legal matters, and government schemes. Available in multiple languages. बु пожилые граждане могут позвонить для помощи.",
     "phone": "14567",
     "category": "elderly",
-    "states": ["all"]
+    "states": ["all"],
+    "availability": "Mon-Sat, 9am-5pm"
   },
   {
-    "id": "mental-health",
-    "name": "Vandrevala Foundation Mental Health Helpline",
-    "description": "Free 24/7 mental health helpline. Counseling in Hindi and English for depression, anxiety, stress, suicidal thoughts.",
+    "id": "mental-health-helpline",
+    "name": "Vandrevala Foundation - Mental Health Helpline",
+    "name_hi": "मानसिक स्वास्थ्य हेल्पलाइन",
+    "description": "Free 24/7 mental health support. Counseling for depression, anxiety, stress, suicidal thoughts. Available in Hindi and English. Referrals to mental health professionals. If in crisis, call 112 or visit nearest hospital.",
     "phone": "1860-2662-345",
+    "alternate_phone": "988 988 4444 (iCall)",
     "category": "health",
-    "states": ["all"]
+    "states": ["all"],
+    "availability": "24/7"
   },
   {
-    "id": "poison-center",
-    "name": "National Poison Information Centre",
-    "description": "Expert advice for poisoning emergencies - pesticides, medicines, chemicals, snake bites. Located at AIIMS Delhi.",
+    "id": "poison-control",
+    "name": "National Poison Information Centre - AIIMS Delhi",
+    "name_hi": "राष्ट्रीय विषबाल सूचना केंद्र - एम्स दिल्ली",
+    "description": "Expert advice for poisoning emergencies - pesticides, medicines, chemicals, snake bites, food poisoning. Doctors available for immediate guidance. For pesticide poisoning in rural areas, this is critical. विषबाल आपातकालीन सलाह।",
     "phone": "011-26593677",
+    "alternate_phone": "1800-11-6116 (Spinal Injury)",
     "category": "emergency",
-    "states": ["all"]
+    "states": ["all"],
+    "available_hours": "24/7"
   },
   {
-    "id": "disaster",
-    "name": "National Disaster Management Helpline",
-    "description": "Helpline for natural disasters - floods, earthquakes, cyclones. Information on relief, evacuation, shelter locations.",
+    "id": "disaster-helpline-1078",
+    "name": "National Disaster Management Helpline - 1078",
+    "name_hi": "आपदा प्रबंधन हेल्पलाइन - 1078",
+    "description": "Helpline for natural disasters - floods, earthquakes, cyclones, landslides. Information on relief camps, evacuation, shelter, rescue operations. State disaster control rooms also available.",
     "phone": "1078",
+    "alternate_phone": "112",
     "category": "emergency",
-    "states": ["all"]
+    "states": ["all"],
+    "available_hours": "24/7 during disasters"
   },
   {
-    "id": "csc-mp",
-    "name": "Common Service Center - Madhya Pradesh",
-    "description": "CSC provides government services like Aadhaar enrollment, PAN card, passport, scheme applications, banking. Find nearest CSC at locator.csccloud.in",
-    "phone": "1800-121-3468",
-    "category": "government_services",
-    "states": ["Madhya Pradesh"]
+    "id": "cyber-crime-1930",
+    "name": "Cyber Crime Helpline - 1930",
+    "name_hi": "साइबर अपराध हेल्पलाइन - 1930",
+    "description": "Report online fraud, UPI scams, social media harassment, identity theft, online banking fraud, OTP fraud. Police will call back within 30 minutes in metros. For non-emergency, file at cybercrime.gov.in.",
+    "phone": "1930",
+    "category": "safety",
+    "states": ["all"],
+    "note": "Report at cybercrime.gov.in for non-urgent matters"
   },
   {
-    "id": "csc-up",
-    "name": "Common Service Center - Uttar Pradesh",
-    "description": "CSC provides government services like Aadhaar enrollment, PAN card, passport, scheme applications, banking. Find nearest CSC at locator.csccloud.in",
-    "phone": "1800-121-3468",
-    "category": "government_services",
-    "states": ["Uttar Pradesh"]
+    "id": "blood-bank-1910",
+    "name": "Blood Bank Helpline - 1910",
+    "name_hi": "रक्त बैंक हेल्पलाइन - 1910",
+    "description": "Find nearest blood bank, request blood units, information on blood donation camps. Indian Red Cross Society operates nationwide blood bank network. Blood is free for poor patients, nominal charge for others.",
+    "phone": "1910",
+    "category": "health",
+    "states": ["all"],
+    "availability": "24/7"
   },
   {
-    "id": "csc-bihar",
-    "name": "Common Service Center - Bihar",
-    "description": "CSC provides government services like Aadhaar enrollment, PAN card, passport, scheme applications, banking. Find nearest CSC at locator.csccloud.in",
-    "phone": "1800-121-3468",
-    "category": "government_services",
-    "states": ["Bihar"]
+    "id": "consumer-helpline-1800-11-4000",
+    "name": "National Consumer Helpline - 1800-11-4000",
+    "name_hi": "राष्ट्रीय उपभोक्ता हेल्पलाइन - 1800-11-4000",
+    "description": "File complaints about defective products, poor services, unfair trade practices. Free legal advice on consumer rights. Can file complaint online at consumeraffairs.nic.in.",
+    "phone": "1800-11-4000",
+    "alternate_phone": "1911",
+    "category": "consumer",
+    "states": ["all"],
+    "availability": "Mon-Sat, 9am-5pm"
   },
   {
-    "id": "railway-enquiry",
-    "name": "Railway Enquiry",
-    "description": "Indian Railways enquiry for train status, PNR check, seat availability, general railway information.",
-    "phone": "139",
-    "category": "transport",
-    "states": ["all"]
+    "id": "lpg-emergency-1906",
+    "name": "LPG Gas Emergency - 1906",
+    "name_hi": "गैस आपातकाल - 1906",
+    "description": "Report LPG gas leaks, cylinder delivery issues, connection problems. Also for PM Ujjwala Yojana queries, new connection status. Available 24/7 for gas leak emergencies.",
+    "phone": "1906",
+    "category": "emergency",
+    "states": ["all"],
+    "availability": "24/7"
   },
   {
-    "id": "electricity-complaint",
-    "name": "Electricity Complaint - General",
-    "description": "Report power outages, billing issues, and electrical hazards. Contact your state electricity board. General helpline varies by state.",
+    "id": "electricity-complaint-1912",
+    "name": "Electricity Complaint - 1912",
+    "name_hi": "बिजली शिकायत - 1912",
+    "description": "Report power outages, billing issues, electrical hazards, theft, and meter problems. Connect to your state electricity board. For life-threatening electrical situations, call 112.",
     "phone": "1912",
+    "alternate_phone": "112",
     "category": "utilities",
     "states": ["all"]
   },
   {
+    "id": "railway-enquiry-139",
+    "name": "Railway Enquiry - 139",
+    "name_hi": "रेलवे पूछताछ - 139",
+    "description": "Indian Railways enquiry for train status, PNR check, seat availability, general railway information. Also available via 132 (for SMS-based updates).",
+    "phone": "139",
+    "alternate_phone": "132",
+    "category": "transport",
+    "states": ["all"],
+    "note": "Also check trainman.com, confirmtkt.com for PNR status"
+  },
+  {
     "id": "rti-helpline",
     "name": "RTI (Right to Information) Helpline",
-    "description": "Help with filing RTI applications to get information from government departments. Available in Hindi and English.",
+    "name_hi": "सूचना का अधिकार हेल्पलाइन",
+    "description": "Help with filing RTI applications to get information from government departments. Available in Hindi and English. File RTI online at rtionline.gov.in.",
     "phone": "011-26182598",
+    "alternate_portal": "rtionline.gov.in",
     "category": "government_services",
     "states": ["all"]
   },
   {
-    "id": "consumer-helpline",
-    "name": "National Consumer Helpline",
-    "description": "File complaints about defective products, poor services, unfair trade practices. Free advice on consumer rights.",
-    "phone": "1800-11-4000",
-    "category": "consumer",
-    "states": ["all"]
+    "id": "csc-helpline",
+    "name": "Common Service Center (CSC) - 1800-121-3468",
+    "name_hi": "कॉमन सर्विस सेंटर - 1800-121-3468",
+    "description": "CSC provides government services: Aadhaar enrollment, PAN card, passport, scheme applications, banking, insurance. 4.5 lakh+ CSCs across rural India. Find nearest at locator.csccloud.in.",
+    "phone": "1800-121-3468",
+    "category": "government_services",
+    "states": ["all"],
+    "portal": "locator.csccloud.in"
   },
   {
-    "id": "cyber-crime",
-    "name": "Cyber Crime Helpline",
-    "description": "Report online fraud, UPI scams, social media harassment, identity theft, online banking fraud.",
-    "phone": "1930",
-    "category": "safety",
-    "states": ["all"]
-  },
-  {
-    "id": "blood-bank",
-    "name": "Blood Bank Helpline - Red Cross",
-    "description": "Find nearest blood bank, request blood units, blood donation camps information.",
-    "phone": "1910",
+    "id": "jan-aushadhi-locator",
+    "name": "Jan Aushadhi Kendra Locator - 1800-180-1111",
+    "name_hi": "जनऔषधि केंद्र लोकेटर - 1800-180-1111",
+    "description": "Find nearest Jan Aushadhi Kendra for affordable generic medicines (50-80% cheaper than branded). 18,646 Kendras across India. 2,110 medicines and 315 surgical items available. No prescription needed.",
+    "phone": "1800-180-1111",
+    "website_url": "janaushadhi.gov.in",
     "category": "health",
+    "states": ["all"],
+    "note": "18,646 Kendras; target 25,000 by March 2027"
+  },
+  {
+    "id": "legal-aid-15100",
+    "name": "Free Legal Aid - 15100",
+    "name_hi": "मुफ्त विधिक सहायता - 15100",
+    "description": "Free legal aid for poor and marginalized. Help with filing cases, legal advice, court representation. Available through National Legal Services Authority (NALSA). Women and SC/ST get priority.",
+    "phone": "15100",
+    "alternate_phone": "1800-425-0016 (NALSA)",
+    "category": "legal",
     "states": ["all"]
   },
   {
-    "id": "lpg-emergency",
-    "name": "LPG Gas Emergency",
-    "description": "Report LPG gas leaks, cylinder delivery issues, connection problems. Also for PM Ujjwala Yojana queries.",
-    "phone": "1906",
-    "category": "emergency",
+    "id": "nursing-care-104",
+    "name": "Health Helpline - 104",
+    "name_hi": "स्वास्थ्य हेल्पलाइन - 104",
+    "description": "State health helpline in many states for medical advice, hospital information, ambulance coordination, and health scheme information. Available in various states.",
+    "phone": "104",
+    "category": "health",
+    "states": ["Andhra Pradesh", "Assam", "Chhattisgarh", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Rajasthan", "Telangana", "Uttrakhand"]
+  },
+  {
+    "id": "suicide-prevention",
+    "name": "iCall - Suicide Prevention Helpline",
+    "name_hi": "आत्महत्या रोकथाम हेल्पलाइन",
+    "description": "Free, confidential mental health support for those in distress. Available 8am-10pm in multiple languages including Hindi. Referrals to psychiatrists and hospitals if needed. Not just suicide — any emotional crisis.",
+    "phone": "9152987821",
+    "alternate_phone": "9820466726 (Vandrevala)",
+    "category": "mental_health",
     "states": ["all"]
+  },
+  {
+    "id": "dairy-farmer-helpline",
+    "name": "Dairy Farmer Helpline - 011-23010488",
+    "name_hi": "डेयरी किसान हेल्पलाइन",
+    "description": "Help for dairy farmers regarding cattle care, milk prices, dairy schemes, fodder, and animal health. Information on government schemes for dairy development.",
+    "phone": "011-23010488",
+    "category": "agriculture",
+    "states": ["all"],
+    "note": "Also contact state animal husbandry department"
   }
 ]

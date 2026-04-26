@@ -148,5 +148,85 @@
     "action_mild": "For small particle: flush eye with clean water for 10 minutes. Blink repeatedly. Do NOT rub the eye. If particle visible, try to remove with clean wet cloth corner.",
     "action_severe": "Go to hospital IMMEDIATELY if: chemical splash (flush with water for 20 minutes first), sharp object injury, sudden vision loss, severe pain, bleeding from eye. Do NOT try to remove embedded objects.",
     "disclaimer": "Eye injuries can cause permanent vision loss. See a doctor promptly."
+  },
+  {
+    "id": "dengue",
+    "symptoms": ["dengue", "dengue bukhar", "breakbone fever", "l dengue"],
+    "age_group": "all",
+    "description": "Dengue fever - transmitted by Aedes mosquito. High fever, severe headache, joint and muscle pain, rash. Can become severe dengue with bleeding and plasma leakage.",
+    "severity_questions": ["How high is the fever?", "Is there any bleeding from nose or gums?", "Are there red spots on skin?", "Is the person vomiting blood or passing blood in stool?"],
+    "action_mild": "Rest in shade. Drink plenty of fluids - ORS, coconut water, fruit juices. Take paracetamol for fever (NOT ibuprofen/aspirin - they increase bleeding risk). Do not take antibiotics. Monitor platelet count if possible.",
+    "action_severe": "Go to hospital IMMEDIATELY if: severe abdominal pain, persistent vomiting, bleeding from gums/nose, blood in stool/vomit, difficulty breathing, confusion, platelet count dropping rapidly. Severe dengue can be fatal within hours. Give ORS while shifting to hospital.",
+    "disclaimer": "Dengue can be fatal. Do not ignore warning signs. Hospital care is essential for severe cases."
+  },
+  {
+    "id": "malaria",
+    "symptoms": ["malaria", "malaria bukhar", "kara-bukhar", "sardi-zukam"],
+    "age_group": "all",
+    "description": "Malaria - transmitted by female Anopheles mosquito. Fever with chills, headache, muscle pain, sweating. Common in monsoon and post-monsoon in rural areas.",
+    "severity_questions": ["How many days of fever?", "Is there shaking with cold?", "Have you traveled to a malaria-prone area recently?", "Is there confusion or drowsiness?"],
+    "action_mild": "Go to health center for blood test (RDT/microscopy). If positive, take full course of ACT (Artemisinin-based Combination Therapy) - it is FREE at government health centers. Rest, drink fluids. Complete full treatment even if feeling better.",
+    "action_severe": "Go to hospital immediately if: confusion, seizures, severe anemia (pale gums, weakness), unable to drink, passing dark urine, jaundice (yellow eyes/skin). Falciparum malaria can be deadly within 24 hours.",
+    "disclaimer": "Malaria requires proper medical treatment with prescribed medicines. Do not self-medicate. Free ACT medicines available at all government health centers."
+  },
+  {
+    "id": "typhoid",
+    "symptoms": ["typhoid", "teekhi bukhar", "aantak bukhar", "enteric fever"],
+    "age_group": "all",
+    "description": "Typhoid fever - caused by Salmonella bacteria, spread through contaminated food/water. High fever (104F+), stomach pain, weakness, headache. Common in monsoon.",
+    "severity_questions": ["How many days of continuous fever?", "Is there severe stomach pain?", "Is there constipation or persistent diarrhea?", "Is the person confused?"],
+    "action_mild": "Blood test (Widal test or Typhi dot) needed for diagnosis. Take full course of antibiotics as prescribed (usually azithromycin or ceftriaxone). Eat light food. Drink clean water. Rest for 2 weeks to avoid complications.",
+    "action_severe": "Go to hospital if: high fever lasting more than 5 days, severe abdominal pain, intestinal perforation symptoms (severe pain, rigid abdomen), confusion, jaundice, or if person is a child or pregnant woman. Surgery may be needed for intestinal perforation.",
+    "disclaimer": "Typhoid requires antibiotics. Do not ignore prolonged fever. Vaccination available (Typhoid conjugate vaccine - one dose for children above 6 months)."
+  },
+  {
+    "id": "toothache-infection",
+    "symptoms": ["tooth pain", "daant ka dard", "swollen gum", "daant mine"],
+    "age_group": "all",
+    "description": "Severe toothache with swelling or infection in mouth",
+    "severity_questions": ["Is there swelling of face or jaw?", "Is there fever with the tooth pain?", "Can you open mouth fully?", "Is there pus discharge?"],
+    "action_mild": "Rinse mouth with warm salt water. Use ice pack outside cheek for 10 minutes. Take ibuprofen or paracetamol for pain. Do NOT put aspirin directly on gum (burns tissue). See dentist as soon as possible.",
+    "action_severe": "Go to hospital if: swelling spreading to eye/neck/chest (can block breathing), fever with chills, difficulty swallowing or opening mouth, pus discharge. Infection can spread to jaw and cause serious complications.",
+    "disclaimer": "Dental infections can spread to bloodstream. Do not ignore spreading swelling."
+  },
+  {
+    "id": "epilepsy-seizure",
+    "symptoms": ["seizure", "mirgi", "pathla lagna", "convulsion"],
+    "age_group": "all",
+    "description": "Epileptic seizure or convulsion - uncontrolled body movement, stiffening, frothing from mouth, loss of consciousness",
+    "severity_questions": ["How long did the seizure last?", "Is the person breathing normally now?", "Is this the first seizure or known epilepsy?", "Did the person injure their head?"],
+    "action_mild": "For a person having seizure: Do NOT hold them down. Do NOT put anything in mouth. Turn them on side. Clear area of hard/sharp objects. Time the seizure. After seizure stops, keep them calm and let them rest.",
+    "action_severe": "Call 108 immediately if: seizure lasts more than 5 minutes, person doesn't wake up between seizures, first-time seizure, seizure with high fever, person is pregnant, breathing stops. Do NOT leave person alone.",
+    "disclaimer": "Epilepsy is manageable with proper medication. Do not hide epilepsy from doctor. Free medicines available under National Epilepsy Control Programme."
+  },
+  {
+    "id": "asthma-attack",
+    "symptoms": ["asthma attack", "painti dikkat", "saans mein chhati", "bronchial asthma"],
+    "age_group": "all",
+    "description": "Asthma attack - severe wheezing, coughing, chest tightness, difficulty breathing. May be triggered by dust, pollen, cold air, exercise.",
+    "severity_questions": ["Is the person able to speak full sentences?", "Are lips or fingernails blue?", "Did they use their inhaler? How many times?", "Is there confusion or drowsiness?"],
+    "action_mild": "Help person sit upright. Loosen tight clothing. If they have asthma inhaler (blue pump), help them use it - one puff, wait 1 minute, can repeat up to 4 times. Keep them calm, do not panic.",
+    "action_severe": "Call 108 IMMEDIATELY if: inhaler not helping after 4 puffs, lips/fingernails blue, cannot speak at all, rapid breathing, confusion, collapse. Asthma attack can be fatal within minutes.",
+    "disclaimer": "Asthma requires daily controller medication (usually inhaled steroid). Spacer device makes inhaler more effective. Free medicines available at government health centers."
+  },
+  {
+    "id": " jaundice",
+    "symptoms": ["jaundice", "peelia", "aankhon aur chest peela", "liver problem"],
+    "age_group": "all",
+    "description": "Jaundice - yellowing of eyes and skin, dark urine, pale stool, weakness. Caused by liver problems (hepatitis, bile duct issues). Very common in rural areas due to contaminated water.",
+    "severity_questions": ["How many days of yellow eyes/skin?", "Is there high fever with it?", "Is the person confused or drowsy?", "Is there swelling of legs or abdomen?"],
+    "action_mild": "Rest completely. Eat light diet - khichdi, dal, fruits, vegetables. Avoid fatty food, oil, fried items, alcohol. Drink clean boiled water. Visit doctor for liver function tests.",
+    "action_severe": "Go to hospital if: high fever with jaundice, severe weakness, confusion, swelling in legs/abdomen, vomiting blood, passing black stool. Could be severe hepatitis or liver failure.",
+    "disclaimer": "Jaundice needs medical evaluation. Do not ignore yellow eyes/skin. Hepatitis A and E spread through contaminated food/water - maintain hygiene."
+  },
+  {
+    "id": "low-blood-pressure",
+    "symptoms": ["low BP", "khoon ka dabna kam", "chakkar aana", "kamjoosi"],
+    "age_group": "all",
+    "description": "Low blood pressure causing dizziness, weakness, fainting",
+    "severity_questions": ["Is the person able to stand?", "Is there chest pain or breathlessness?", "Did they lose consciousness?", "Are they vomiting?"],
+    "action_mild": "Help person lie down and raise legs slightly. Give ORS water or salted water to drink. If person is diabetic, check blood sugar. Let them rest until stable. If on BP medicines, consult doctor about dose.",
+    "action_severe": "Go to hospital if: person fainted and did not regain consciousness quickly, chest pain, breathlessness, confusion, seizure, signs of internal bleeding (black stool, vomiting blood). Low BP can be due to heart problems, bleeding, or severe infection.",
+    "disclaimer": "Recurrent low BP needs medical investigation. Do not stop BP medicines without doctor advice."
   }
 ]

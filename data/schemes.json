@@ -3,331 +3,565 @@
     "id": "pm-kisan",
     "name": "PM-KISAN Samman Nidhi",
     "name_hi": "पीएम-किसान सम्मान निधि",
-    "description": "Direct income support of Rs 6000 per year to small and marginal farmer families, paid in 3 equal installments of Rs 2000 each. Available to all farmers across India including Uttar Pradesh, Madhya Pradesh, Bihar, Rajasthan and all states. किसानों को सालाना 6000 रुपये सीधे बैंक खाते में। छोटे और सीमांत किसान परिवारों के लिए। हर 4 महीने में 2000 रुपये की किस्त।",
+    "description": "Direct income support of Rs 6000 per year to small and marginal farmer families, paid in 3 equal installments of Rs 2000 each — transferred directly to bank account. Installments released in April, August, and December. No middlemen. For all farmer families owning cultivable land across India. किसान परिवारों को सालाना 6000 रुपये सीधे बैंक खाते में, कोई बिचौलिया नहीं। हर 4 महीने में 2000 रुपये की किस्त।",
     "eligibility": {
       "occupation": ["farmer", "kisan"],
       "land_max_acres": 50,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "family_size": null,
+      "exclusions": ["Income tax payers", "Government employees", "Professionals with formal income"]
     },
-    "benefits": "Rs 6000/year in 3 installments of Rs 2000 directly to bank account. सालाना 6000 रुपये, 3 किस्तों में।",
-    "documents_required": ["Aadhaar Card", "Land ownership records (खसरा/खतौनी)", "Bank account with IFSC"],
-    "how_to_apply": "Visit nearest Common Service Center (CSC) or apply online at pmkisan.gov.in. नजदीकी CSC जाएं या pmkisan.gov.in पर ऑनलाइन आवेदन करें।",
+    "benefits": "Rs 6000/year paid in 3 installments of Rs 2000 (April, August, December). Money reaches bank account directly from central government. सालाना 6000 रुपये, सीधे बैंक खाते में।",
+    "installment_schedule": "Installment 1: April-July | Installment 2: August-November | Installment 3: December-March",
+    "documents_required": ["Aadhaar Card", "Land ownership records (खसरा/खतौनी)", "Bank account with IFSC", "Mobile number for SMS alerts"],
+    "how_to_apply": "Visit nearest Common Service Center (CSC) or apply online at pmkisan.gov.in. You can also apply through your state's agriculture department portal. नजदीकी CSC जाएं या pmkisan.gov.in पर आवेदन करें।",
     "helpline": "155261",
-    "category": ["agriculture", "income_support", "kisan", "farmer"]
+    "website": "pmkisan.gov.in",
+    "check_status": "pmkisan.gov.in/PMKISANFind.aspx",
+    "category": ["agriculture", "income_support", "kisan", "farmer", "pm-kisan"]
   },
   {
     "id": "ayushman-bharat",
     "name": "Ayushman Bharat - PMJAY",
     "name_hi": "आयुष्मान भारत - पीएमजेएवाई",
-    "description": "Free health insurance coverage of Rs 5 lakh per family per year for secondary and tertiary hospitalization. Covers pre and post hospitalization expenses. Available to all BPL families, farmers, laborers, workers across all states. मुफ्त स्वास्थ्य बीमा - हर परिवार को सालाना 5 लाख रुपये तक का मुफ्त इलाज। अस्पताल में भर्ती होने पर कोई खर्चा नहीं। गरीब, किसान, मजदूर सभी के लिए।",
+    "description": "World's largest health insurance scheme. Free health coverage of Rs 5 lakh per family per year for secondary and tertiary hospitalization. No premium, no deduction at hospital. Covers pre-existing conditions from day 1. As of September 2024, ALL citizens aged 70+ are eligible regardless of income. मुफ्त स्वास्थ्य बीमा - हर परिवार को सालाना 5 लाख रुपये तक का मुफ्त इलाज। 70 वर्ष और उससे अधिक उम्र के सभी नागरिकों के लिए बिना आय सीमा के पात्र।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
-      "income_max": 100000,
-      "family_size": null
+      "income_max": null,
+      "family_size": null,
+      "priority_groups": ["SECC 2011 identified families", "Domicile/ration card holders", "Senior citizens 70+ (from Sep 2024)"]
     },
-    "benefits": "Rs 5 lakh health insurance per family per year, cashless treatment at empanelled hospitals. सालाना 5 लाख का मुफ्त इलाज।",
-    "documents_required": ["Aadhaar Card", "Ration Card", "Income certificate"],
-    "how_to_apply": "Visit nearest Ayushman Bharat center or call 14555. Check eligibility at mera.pmjay.gov.in. 14555 पर कॉल करें या नजदीकी आयुष्मान केंद्र जाएं।",
+    "benefits": "Rs 5 lakh/year coverage per family. Cashless and paperless treatment at 25,000+ empanelled hospitals. Covers all pre-existing conditions. Transport allowance included. 5 लाख का मुफ्त इलाज, कोई पैसा नहीं देना।",
+    "hospital_network": "25,000+ government and private hospitals empanelled pan-India",
+    "documents_required": ["Aadhaar Card", "Ration Card or any family ID proof", "For 70+: any age proof"],
+    "how_to_apply": "Call 14555 or visit mera.pmjay.gov.in to check eligibility. Visit nearest CSC, bank, or empanelled hospital to get Ayushman Card. 14555 पर कॉल करें या mera.pmjay.gov.in पर जांचें।",
     "helpline": "14555",
-    "category": ["health", "insurance", "hospital", "bimar", "ilaj"]
+    "website": "pmjay.gov.in",
+    "category": ["health", "insurance", "hospital", "bimar", "ilaj", "ayushman"]
   },
   {
     "id": "ration-card",
     "name": "National Food Security Act - Ration Card",
     "name_hi": "राष्ट्रीय खाद्य सुरक्षा - राशन कार्ड",
-    "description": "Subsidized food grains - rice at Rs 3/kg, wheat at Rs 2/kg, coarse grains at Rs 1/kg for eligible families under the public distribution system. Every BPL family, farmer family, laborer family can get cheap ration. सस्ता राशन - चावल 3 रुपये किलो, गेहूं 2 रुपये किलो। गरीब परिवारों, किसानों, मजदूरों सभी के लिए। हर महीने 5 किलो अनाज प्रति व्यक्ति।",
+    "description": "Subsidized food grains under the Public Distribution System. Rice at Rs 3/kg, wheat at Rs 2/kg, coarse grains at Rs 1/kg. Each person gets 5 kg per month. Priority households identified by state governments. Antyodaya Anna Yojana (AAY) families get extra 35 kg at subsidized rates. सस्ता राशन - चावल 3 रुपये, गेहूं 2 रुपये, मोटा अनाज 1 रुपये किलो। प्रति व्यक्ति 5 किलो हर महीने।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
-      "income_max": 150000,
-      "family_size": null
+      "income_max": null,
+      "family_size": null,
+      "priority_categories": ["AAY (Antyodaya) families - poorest of poor", "PHH (Priority Household) - as per state criteria"]
     },
-    "benefits": "5 kg food grains per person per month at subsidized rates. हर व्यक्ति को 5 किलो सस्ता अनाज हर महीने।",
-    "documents_required": ["Aadhaar Card", "Address proof", "Income certificate", "Family photo"],
-    "how_to_apply": "Apply at district food and civil supplies office or state food portal. जिला खाद्य आपूर्ति कार्यालय में आवेदन करें।",
+    "benefits": "5 kg food grains per person/month at subsidized rates. AAY families: extra 35 kg at Rs 2-3/kg. राशन दुकान से 5 किलो सस्ता अनाज हर महीने।",
+    "ration_prices": {
+      "rice": "Rs 3/kg",
+      "wheat": "Rs 2/kg",
+      "coarse_grains": "Rs 1/kg"
+    },
+    "documents_required": ["Aadhaar Card of all family members", "Address proof", "Family composition certificate", "Income certificate (state-specific)"],
+    "how_to_apply": "Apply at district food and civil supplies office or state food portal online. Track application at state food department website. जिला खाद्य आपूर्ति कार्यालय में आवेदन करें।",
     "helpline": "1967",
-    "category": ["food", "welfare", "ration", "khaana", "anaaj"]
+    "category": ["food", "welfare", "ration", "khaana", "anaaj", "nfsa"]
   },
   {
     "id": "pm-awas-yojana-gramin",
     "name": "PM Awas Yojana - Gramin",
     "name_hi": "पीएम आवास योजना - ग्रामीण",
-    "description": "Financial assistance for construction of pucca house with basic amenities for rural homeless and those living in kutcha houses. For farmers, laborers, anyone without a proper house in village. पक्का मकान बनाने के लिए सरकारी मदद। गांव में कच्चे घर में रहने वालों के लिए। किसान, मजदूर, बेघर सभी के लिए 1.20 लाख रुपये।",
+    "description": "Financial assistance to build a pucca house with basic amenities in rural areas. Target: homeless and those living in kutcha/inadequate houses. Extended 2024-2029 with 2 crore additional houses. For farmers, laborers, landless — anyone without adequate housing in village. पक्का मकान बनाने के लिए सरकारी मदद। 2024-2029 में 2 करोड़ और घर। गांव में कच्चे या बिना घर वालों के लिए।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
-      "income_max": 200000,
-      "family_size": null
+      "income_max": null,
+      "family_size": null,
+      "priority": ["Homeless families", "Families in kutcha houses", "SC/ST families", "widows and disabled"]
     },
-    "benefits": "Rs 1.20 lakh in plains and Rs 1.30 lakh in hilly areas for house construction. मैदानी इलाकों में 1.20 लाख और पहाड़ी इलाकों में 1.30 लाख रुपये।",
-    "documents_required": ["Aadhaar Card", "BPL certificate", "Land documents", "Bank account"],
-    "how_to_apply": "Apply through Gram Panchayat or Block Development Office. ग्राम पंचायत या ब्लॉक विकास कार्यालय में आवेदन करें।",
+    "benefits": "Rs 1.20 lakh in plains, Rs 1.30 lakh in hilly areas for house construction. Additional Rs 12,000 for toilet under Swachh Bharat (separate scheme). मैदानी इलाकों में 1.20 लाख, पहाड़ी में 1.30 लाख रुपये। शौचालय के लिए अलग से 12,000।",
+    "unit_assistance": "Rs 1.20 lakh for plain areas, Rs 1.30 lakh for hilly areas",
+    "documents_required": ["Aadhaar Card", "SECC 2011 data inclusion proof or BPL certificate", "Land documents (if constructing on own land)", "Bank account"],
+    "how_to_apply": "Apply through Gram Panchayat. List is prepared from SECC 2011 data. Contact Gram Sabha or Block Development Office. Check status at pmaygramin.gov.in. ग्राम पंचायत से आवेदन करें। SECC 2011 डेटा से चयन।",
     "helpline": "1800-11-6446",
-    "category": ["housing", "welfare", "ghar", "makaan"]
+    "website": "pmaygramin.gov.in",
+    "category": ["housing", "welfare", "ghar", "makaan", "pMAY-G"]
   },
   {
     "id": "pm-ujjwala",
     "name": "PM Ujjwala Yojana",
     "name_hi": "पीएम उज्ज्वला योजना",
-    "description": "Free LPG gas connection to women from below poverty line households to replace unclean cooking fuels like wood and cow dung. For farmer families, laborer families, any BPL family. महिलाओं को मुफ्त गैस कनेक्शन। लकड़ी और उपले से खाना बनाना बंद। किसान परिवार, मजदूर परिवार, गरीब परिवार सभी की महिलाओं के लिए।",
+    "description": "Free LPG gas connection to women from poor households to replace unclean cooking fuels. Ujjwala 2.0 (launched 2021) provides deposit-free connections to families not covered previously. As of April 2026, over 10.54 crore connections released. महिलाओं को मुफ्त गैस कनेक्शन। लकड़ी और उपले से खाना बनाना बंद करें। अब तक 10.54 करोड़ से अधिक कनेक्शन।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
-      "income_max": 100000,
-      "family_size": null
+      "income_max": null,
+      "family_size": null,
+      "gender": "Women only",
+      "conditions": ["No existing LPG connection in household", "Woman must be 18+ years old", "Not covered under any other LPG scheme"]
     },
-    "benefits": "Free LPG connection, first refill free, stove provided. मुफ्त गैस कनेक्शन, पहला रिफिल मुफ्त, चूल्हा भी मिलेगा।",
-    "documents_required": ["Aadhaar Card", "BPL ration card", "Bank account", "Passport photo"],
-    "how_to_apply": "Visit nearest LPG distributor with documents. नजदीकी गैस एजेंसी में जाएं।",
+    "benefits": "Free LPG connection, first refill free, stove (hot plate) provided free. No security deposit. Connection is in woman's name. मुफ्त गैस कनेक्शन, पहला रिफिल मुफ्त, चूल्हा भी मुफ्त।",
+    "documents_required": ["Aadhaar Card of woman applicant", "BPL or SECC ration card", "Bank account (for DBT refunds)", "Passport size photo", "Address proof"],
+    "how_to_apply": "Visit nearest LPG distributor (Indane, Bharat Gas, HP Gas). Check Ujjwala beneficiary status at pmuy.gov.in. Documents verified by distributor, connection released within 30 days. नजदीकी गैस एजेंसी में जाएं।",
     "helpline": "1906",
-    "category": ["energy", "women", "gas", "mahila"]
+    "website": "pmuy.gov.in",
+    "connections_released": "10.54 crore+ (as of April 2026)",
+    "category": ["energy", "women", "gas", "mahila", "pmuy", "cooking"]
   },
   {
     "id": "pm-fasal-bima",
     "name": "PM Fasal Bima Yojana",
     "name_hi": "पीएम फसल बीमा योजना",
-    "description": "Crop insurance scheme providing financial support to farmers suffering crop loss due to natural calamities, floods, drought, pests and diseases. Very low premium rates for farmers. All farmers in all states eligible. फसल बीमा - बाढ़, सूखा, कीट से फसल खराब होने पर मुआवजा। सभी किसानों के लिए बहुत कम प्रीमियम। UP, MP, Bihar, Rajasthan सभी राज्यों के किसानों के लिए।",
+    "description": "Crop insurance for farmers against yield loss due to natural calamities — drought, flood, landslide, earthquake, pests/diseases, hailstorm, post-harvest losses (up to 14 days). Notified crops vary by state and season. Premium is very low — farmer pays only 2% for Kharif, 1.5% for Rabi crops. फसल बीमा - बाढ़, सूखा, कीट, ओलावृष्टि से फसल खराब होने पर मुआवजा। सभी किसानों के लिए। प्रीमियम बहुत कम।",
     "eligibility": {
       "occupation": ["farmer", "kisan"],
-      "land_max_acres": 50,
+      "land_max_acres": null,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "family_size": null,
+      "types": ["Loanee farmers (auto-enrolled via bank)", "Non-loanee farmers (voluntary)", "Sharecroppers (with land owner consent)"]
     },
-    "benefits": "Insurance coverage for crop loss. Premium: 2% for Kharif, 1.5% for Rabi, 5% for commercial crops. खरीफ के लिए 2%, रबी के लिए 1.5% प्रीमियम।",
-    "documents_required": ["Aadhaar Card", "Land records (खसरा/खतौनी)", "Bank account", "Crop sowing certificate (बुवाई प्रमाण पत्र)"],
-    "how_to_apply": "Apply through bank, CSC, or insurance company before sowing season. बुवाई से पहले बैंक या CSC में आवेदन करें।",
+    "benefits": "Crop loss compensation based on yield shortfall vs threshold. Premium: 2% Kharif, 1.5% Rabi, 5% commercial/horticultural crops. State and central government pay remaining premium. 2% खरीफ, 1.5% रबी, 5% व्यावसायिक फसलों के लिए।",
+    "premium_rates": {
+      "kharif": "2% of sum insured",
+      "rabi": "1.5% of sum insured",
+      "commercial_crops": "5% of sum insured"
+    },
+    "coverage_scope": "Drought, flood, landslides, earthquake, fire, pests/diseases, hailstorm, cyclone, post-harvest losses (up to 14 days after harvest)",
+    "loss_assessment": "Crop Cutting Experiments (CCEs) at village level; area approach for yield comparison",
+    "documents_required": ["Aadhaar Card", "Land records (खसरा/खतौनी)", "Bank account", "Sowing certificate (बुवाई प्रमाण पत्र) from Village Officer", "Crop details and season"],
+    "how_to_apply": "Apply through bank (for loanee), CSC, or directly at insurance company office before sowing deadline. Last date to apply: 2 weeks after sowing. बैंक, CSC या बीमा कंपनी में आवेदन करें। बुवाई से पहले या 2 सप्ताह बाद तक।",
     "helpline": "1800-200-7710",
-    "category": ["agriculture", "insurance", "fasal", "bima", "kisan"]
+    "website": "pmfby.gov.in",
+    "category": ["agriculture", "insurance", "fasal", "bima", "kisan", "crop"]
   },
   {
     "id": "sukanya-samriddhi",
     "name": "Sukanya Samriddhi Yojana",
     "name_hi": "सुकन्या समृद्धि योजना",
-    "description": "Savings scheme for girl child. High interest rate savings account for education and marriage expenses of girl children below 10 years. Available to all families - farmers, laborers, everyone. बेटियों के लिए बचत योजना। 10 साल से कम उम्र की बेटियों के लिए। पढ़ाई और शादी के लिए बचत। किसान, मजदूर, सभी परिवारों के लिए। ज्यादा ब्याज मिलता है।",
+    "description": "Savings scheme for girl child to secure her education and marriage. High interest rate (currently 8.2% per annum, revised quarterly). Tax-free maturity amount. Partial withdrawal allowed for education after 18. Account can be opened at any post office or authorized bank. बेटियों के लिए बचत योजना। 8.2% ब्याज (करोबारी से मुक्त), टैक्स फ्री। 18 वर्ष के बाद पढ़ाई के लिए आंशिक निकासी।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "family_size": null,
+      "girl_age": "Birth to 10 years at account opening",
+      "max_accounts": "Two girl children per family (three if first is a girl twin)"
     },
-    "benefits": "High interest rate (~8%), tax-free maturity, minimum Rs 250/year deposit. 8% ब्याज, टैक्स फ्री, कम से कम 250 रुपये से शुरू।",
-    "documents_required": ["Girl child birth certificate (जन्म प्रमाण पत्र)", "Parent Aadhaar", "Address proof"],
-    "how_to_apply": "Open account at any post office or authorized bank. किसी भी डाकघर या बैंक में खाता खोलें।",
+    "benefits": "8.2% interest per annum (revised quarterly, tax-free). Minimum deposit Rs 250/year, maximum Rs 1.5 lakh/year. Maturity at 21 years. 8.2% ब्याज (कर मुक्त), सिर्फ 250 रुपये सालाना से शुरू, 21 साल में परिपक्व।",
+    "interest_rate": "8.2% per annum (April 2024-March 2025)",
+    "deposit_limits": "Minimum Rs 250/year, Maximum Rs 1.5 lakh/year",
+    "maturity": "21 years from account opening date",
+    "documents_required": ["Girl child's birth certificate (जन्म प्रमाण पत्र)", "Parent's Aadhaar", "Address proof", "Passport size photos"],
+    "how_to_apply": "Visit any post office or authorized bank branch with documents. Fill Form-A. Account activated on first deposit. पोस्ट ऑफिस या बैंक में फॉर्म भरें। पहली जमा पर खाता चालू।",
     "helpline": "1800-266-6868",
-    "category": ["savings", "women", "education", "beti", "bachat"]
+    "website": "indiapost.gov.in",
+    "category": ["savings", "women", "education", "beti", "bachat", "girl_child"]
   },
   {
     "id": "mgnrega",
     "name": "MGNREGA",
     "name_hi": "मनरेगा",
-    "description": "Guaranteed 100 days of wage employment per year to every rural household whose adult members volunteer for unskilled manual work. For farmers with no work in off-season, landless laborers, anyone in village needing work. गांव में 100 दिन का रोजगार गारंटी। किसान, मजदूर, कोई भी काम मांग सकता है। 200-300 रुपये रोज मजदूरी। UP, MP, Bihar सभी राज्यों में।",
+    "description": "Guaranteed 100 days of wage employment per year to every rural household. Wage rates vary by state — from Rs 200 to Rs 370/day depending on state wage notifications. Work must be provided within 15 days of application, or unemployment allowance is paid. For farmers in off-season, landless laborers, anyone needing work. 100 दिन का रोजगार गारंटी। राज्य के हिसाब से 200-370 रुपये रोज। काम नहीं मिला तो बेरोजगारी भत्ता।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "family_size": null,
+      "age": "18 years and above",
+      "rural": "Only for rural areas"
     },
-    "benefits": "100 days guaranteed employment at minimum wage (Rs 200-300/day depending on state). 100 दिन का गारंटी रोजगार, 200-300 रुपये रोज।",
-    "documents_required": ["Aadhaar Card", "Job Card (जॉब कार्ड - ग्राम पंचायत से बनवाएं)", "Bank account"],
-    "how_to_apply": "Apply for Job Card at Gram Panchayat, then demand work in writing. ग्राम पंचायत में जॉब कार्ड बनवाएं, फिर लिखित में काम मांगें।",
+    "benefits": "100 days guaranteed employment per year at minimum wage of respective state. Wages paid within 15 days of work. Unemployment allowance if work not provided in 15 days. 100 दिन रोजगार, न्यूनतम मजदूरी। काम नहीं मिला तो बेरोजगारी भत्ता।",
+    "wage_rates": "Rs 200-370/day depending on state (revised annually)",
+    "wage_components": "Base wage + Dearness Allowance (DA) revised per state notification",
+    "unemployment_allowance": "First 30 days: 1/4 of minimum wage. After 30 days: 1/2 of minimum wage",
+    "documents_required": ["Aadhaar Card", "Job Card (जॉब कार्ड - apply at Gram Panchayat)", "Bank account for wage payment"],
+    "how_to_apply": "Apply for Job Card at Gram Panchayat (takes 7-14 days). Once Job Card issued, submit written work demand to Gram Panchayat. Work must be allotted within 15 days. ग्राम पंचायत से जॉब कार्ड बनवाएं, फिर लिखित में काम मांगें।",
     "helpline": "1800-345-3626",
-    "category": ["employment", "welfare", "rozgaar", "kaam", "naukri"]
+    "website": "nrega.nic.in",
+    "category": ["employment", "welfare", "rozgaar", "kaam", "naukri", "guarantee"]
   },
   {
     "id": "pm-kisan-maandhan",
     "name": "PM Kisan Maandhan Yojana",
     "name_hi": "पीएम किसान मानधन योजना",
-    "description": "Pension scheme for small and marginal farmers. Rs 3000 monthly pension after age 60. For all farmers in all states. किसानों के लिए पेंशन योजना। 60 साल की उम्र के बाद हर महीने 3000 रुपये पेंशन। छोटे और सीमांत किसानों के लिए। UP, MP, Bihar सभी राज्यों के किसानों के लिए।",
+    "description": "Pension scheme for small and marginal farmers aged 18-40. Monthly contribution of Rs 55-200 based on entry age. After 60, receive Rs 3000/month pension for life. Government matches 50% contribution. Separate from PM-KISAN — can avail both simultaneously. किसान पेंशन योजना। 60 साल के बाद 3000 रुपये महीना। पीएम-किसान के साथ दोनों मिल सकते हैं।",
     "eligibility": {
       "occupation": ["farmer", "kisan"],
       "land_max_acres": 50,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "age_min": 18,
+      "age_max": 40,
+      "exclusions": ["Already covered under NPS", "Already receiving any government pension"]
     },
-    "benefits": "Rs 3000/month pension after age 60. Contribution: Rs 55-200/month based on entry age. 60 साल बाद 3000 रुपये महीना पेंशन।",
-    "documents_required": ["Aadhaar Card", "Land records", "Bank account", "Age proof"],
-    "how_to_apply": "Visit nearest CSC with documents. Entry age 18-40 years. नजदीकी CSC जाएं। 18-40 साल की उम्र में जुड़ सकते हैं।",
+    "benefits": "Rs 3000/month pension after age 60 for life. Spouse gets 50% pension after farmer's death (if spouse is not a pension holder). Government contributes 50% of monthly contribution. 60 साल बाद 3000 रुपये महीना पेंशन।",
+    "contribution_table": {
+      "entry_age_18": "Rs 55/month",
+      "entry_age_30": "Rs 100/month",
+      "entry_age_40": "Rs 200/month"
+    },
+    "documents_required": ["Aadhaar Card", "Land records (खसरा/खतौनी)", "Bank account", "Age proof", "PM-KISAN registration (if available)"],
+    "how_to_apply": "Visit nearest CSC or bank branch. Enrollment is auto-linked with PM-KISAN data. Can also enroll at LIC office. नजदीकी CSC या बैंक में आवेदन करें।",
     "helpline": "1800-267-6888",
-    "category": ["agriculture", "pension", "kisan", "budhapa"]
+    "website": "maandhan.in",
+    "category": ["agriculture", "pension", "kisan", "budhapa", "senior"]
   },
   {
     "id": "jan-dhan",
     "name": "PM Jan Dhan Yojana",
     "name_hi": "पीएम जन धन योजना",
-    "description": "Zero balance bank account with RuPay debit card, Rs 2 lakh accident insurance, and Rs 30,000 life insurance for unbanked citizens. For farmers, laborers, women, everyone who doesn't have a bank account. जन धन खाता - बिना पैसे का बैंक खाता। किसान, मजदूर, महिलाएं - जिनका बैंक खाता नहीं है सबके लिए। 2 लाख का दुर्घटना बीमा मुफ्त। RuPay कार्ड मुफ्त।",
+    "description": "Zero balance bank account for every unbanked adult. 56.77 crore accounts opened as of 2025. Comes with RuPay debit card, Rs 2 lakh accidental insurance, Rs 30,000 life insurance, and overdraft facility up to Rs 10,000 after 6 months of satisfactory operation. बैंक खाता - बिना पैसे का। 56.77 करोड़ खाते खुले। 2 लाख दुर्घटना बीमा, 30,000 जीवन बीमा।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "family_size": null,
+      "age": "10 years and above for RuPay card, adult (18+) for overdraft"
     },
-    "benefits": "Zero balance account, RuPay card, Rs 2 lakh accident insurance, Rs 30,000 life insurance, overdraft up to Rs 10,000. जीरो बैलेंस खाता, मुफ्त बीमा, RuPay कार्ड।",
-    "documents_required": ["Aadhaar Card or any ID proof", "Address proof (if Aadhaar not available)"],
-    "how_to_apply": "Visit any bank branch or Bank Mitra (banking correspondent). किसी भी बैंक में जाएं या बैंक मित्र से मिलें।",
+    "benefits": "Zero balance account, RuPay debit card (free), Rs 2 lakh accidental death insurance, Rs 30,000 life insurance, overdraft up to Rs 10,000 after 6 months, DBT access. जीरो बैलेंस खाता, मुफ्त RuPay कार्ड, 2 लाख दुर्घटना बीमा, 30,000 जीवन बीमा।",
+    "insurance_coverages": {
+      "accidental_death": "Rs 2 lakh",
+      "natural_death": "Rs 30,000",
+      "overdraft": "Up to Rs 10,000 after 6 months satisfactory operation"
+    },
+    "rupay_card_benefits": "Acceptable at all ATMs, POS machines, and online payments across India",
+    "documents_required": ["Aadhaar Card (preferred) or any government ID", "Photo", "Address proof (can be self-declared)"],
+    "how_to_apply": "Visit any bank branch or Business Correspondent (Bank Mitra). Fill simple form, account opened same day. No documents needed if Aadhaar provided. कोई भी बैंक या बैंक मित्र से जाएं।",
     "helpline": "1800-11-0001",
-    "category": ["banking", "financial_inclusion", "bank", "khata"]
+    "website": "pmjdy.gov.in",
+    "accounts_opened": "56.77 crore+ (October 2025)",
+    "category": ["banking", "financial_inclusion", "bank", "khata", "account"]
   },
   {
     "id": "pm-mudra",
     "name": "PM MUDRA Yojana",
     "name_hi": "पीएम मुद्रा योजना",
-    "description": "Collateral-free loans up to Rs 10 lakh for non-farm small business activities. For farmers wanting to start side business, women wanting to start small shops, anyone wanting to start their own work. बिना गारंटी के लोन। छोटा व्यापार शुरू करने के लिए। किसान, महिलाएं, कोई भी अपना काम शुरू कर सकता है। 50,000 से 10 लाख तक का लोन।",
+    "description": "Collateral-free loans for non-farm small businesses. Three categories: Shishu (up to Rs 50,000), Kishore (Rs 50,000-5 lakh), Tarun (Rs 5-10 lakh). Loans from banks, NBFCs, and MFIs. No income ceiling — anyone with a viable business plan can apply. Can be used for shop, small manufacturing, transport, service businesses. बिना गारंटी लोन। छोटा व्यापार, दुकान, ऑटो, काम शुरू करने के लिए। 50,000 से 10 लाख तक।",
     "eligibility": {
-      "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
+      "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor", "student"],
       "land_max_acres": null,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "family_size": null,
+      "business_types": ["Shopkeeper", "Vendor", "Artisan", "Small manufacturer", "Transport operator", "Tailor", "Beauty salon", "Any small business"]
     },
-    "benefits": "Collateral-free business loans. Shishu: up to Rs 50,000. Kishore: up to Rs 5 lakh. Tarun: up to Rs 10 lakh. बिना गारंटी 50,000 से 10 लाख तक।",
-    "documents_required": ["Aadhaar Card", "Business plan", "Address proof", "Bank statements", "Photos"],
-    "how_to_apply": "Apply at any bank, NBFC, or MFI branch. किसी भी बैंक में आवेदन करें।",
+    "benefits": "Collateral-free loans up to Rs 10 lakh. Shishu: Rs 0-50K (no collateral, no third-party guarantee). Kishore: Rs 50K-5L. Tarun: Rs 5L-10L. बिना गारंटी 50,000 से 10 लाख तक।",
+    "loan_categories": {
+      "shishu": "Up to Rs 50,000 (for micro-enterprises, no collateral)",
+      "kishore": "Rs 50,000 to Rs 5 lakh (for growing businesses)",
+      "tarun": "Rs 5 lakh to Rs 10 lakh (for established businesses)"
+    },
+    "interest_rate": "Rates vary by bank/NBFC — typically 8-15% depending on category and creditworthiness. Government does not set interest rate ceiling.",
+    "documents_required": ["Aadhaar Card", "Business plan description", "Address proof", "Bank statements (6 months)", "Photos", "Business address proof (for Kishore/Tarun)"],
+    "how_to_apply": "Apply at any bank, NBFC, or MFI. Also apply online at udyamimitra.in or mudra.in. No collateral required for Shishu and Kishore. कोई भी बैंक या mudra.in पर जाएं।",
     "helpline": "1800-180-1111",
-    "category": ["business", "financial_inclusion", "loan", "vyapaar", "karobaar"]
+    "website": "mudra.in",
+    "category": ["business", "financial_inclusion", "loan", "vyapaar", "karobaar", "enterprise"]
   },
   {
     "id": "atal-pension",
     "name": "Atal Pension Yojana",
     "name_hi": "अटल पेंशन योजना",
-    "description": "Guaranteed pension scheme for unorganized sector workers. Monthly pension of Rs 1000 to Rs 5000 after age 60 based on contribution. For farmers, laborers, small shopkeepers, anyone without formal pension. असंगठित क्षेत्र के लोगों के लिए पेंशन। किसान, मजदूर, दुकानदार - जिनको नौकरी वाली पेंशन नहीं मिलती। 60 साल बाद 1000-5000 रुपये महीना पेंशन।",
+    "description": "Guaranteed pension scheme for unorganized sector workers — farmers, laborers, vendors, drivers, domestic workers, etc. Monthly pension Rs 1000-5000 after age 60 based on contribution level. Government co-contributes 50% of contribution for 5 years for those joining before Dec 2025. किसान, मजदूर, दुकानदार - सभी के लिए गारंटीड पेंशन। 60 साल बाद 1000-5000 रुपये महीना।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "family_size": null,
+      "age_min": 18,
+      "age_max": 40,
+      "sector": "Unorganized sector only (not for government employees or income tax payers)"
     },
-    "benefits": "Monthly pension Rs 1000-5000 after age 60. Government co-contributes 50% for 5 years for eligible subscribers. 60 साल बाद 1000-5000 रुपये पेंशन।",
-    "documents_required": ["Aadhaar Card", "Bank account", "Mobile number"],
-    "how_to_apply": "Apply at any bank branch. Age 18-40 years. किसी भी बैंक में आवेदन करें। 18-40 साल उम्र।",
+    "benefits": "Monthly pension Rs 1000-5000 after age 60 based on contribution. Spouse continues to get 50% pension after subscriber's death. Investment returns are not guaranteed but pension amount is guaranteed by government. 60 साल बाद 1000-5000 रुपये पेंशन।",
+    "pension_tiers": {
+      "contribution_42_per_month": "Rs 1000/month pension",
+      "contribution_84_per_month": "Rs 2000/month pension",
+      "contribution_126_per_month": "Rs 3000/month pension",
+      "contribution_210_per_month": "Rs 5000/month pension"
+    },
+    "government_co_contribution": "50% of contribution matched for 5 years for eligible subscribers joining before Dec 2025",
+    "documents_required": ["Aadhaar Card", "Bank account (auto-debit for contribution)", "Mobile number"],
+    "how_to_apply": "Apply at any bank branch where APY is offered. Fill NPS enrollment form with APY details. Age 18-40. बैंक में आवेदन करें।",
     "helpline": "1800-889-4224",
-    "category": ["pension", "welfare", "budhapa", "retirement"]
+    "website": "jeevanpramaan.gov.in",
+    "category": ["pension", "welfare", "budhapa", "retirement", "unorganized"]
   },
   {
     "id": "pm-jeevan-jyoti",
     "name": "PM Jeevan Jyoti Bima Yojana",
     "name_hi": "पीएम जीवन ज्योति बीमा योजना",
-    "description": "Life insurance scheme with Rs 2 lakh coverage at premium of just Rs 436 per year for ages 18-50. For farmers, laborers, anyone - very cheap life insurance. जीवन बीमा - सिर्फ 436 रुपये साल में 2 लाख का बीमा। किसान, मजदूर सभी के लिए। परिवार को सुरक्षा।",
+    "description": "Life insurance at just Rs 436/year. Rs 2 lakh to nominee in case of death due to any reason (natural or accident). Auto-debited from bank account in June each year. For all eligible persons aged 18-50 with bank account. सिर्फ 436 रुपये साल में 2 लाख का जीवन बीमा। किसी भी कारण से मृत्यु पर 2 लाख।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "family_size": null,
+      "age_min": 18,
+      "age_max": 50,
+      "condition": "Must have bank account for auto-debit"
     },
-    "benefits": "Rs 2 lakh life insurance cover at Rs 436/year premium. Auto-debit from bank account. 436 रुपये में 2 लाख का जीवन बीमा।",
-    "documents_required": ["Aadhaar Card", "Bank account with auto-debit consent"],
-    "how_to_apply": "Enroll at any bank branch or through internet banking. Age 18-50. बैंक में नामांकन करें।",
+    "benefits": "Rs 2 lakh life insurance cover at Rs 436/year premium. Claim submitted through bank. Nominee receives amount. बस 436 रुपये में 2 लाख का जीवन बीमा।",
+    "premium": "Rs 436 per year (auto-debited from bank account in June)",
+    "coverage": "Rs 2 lakh on death from any cause",
+    "documents_required": ["Aadhaar Card", "Bank account with consent for auto-debit of premium"],
+    "how_to_apply": "Enroll at any bank branch. Fill simple form and give auto-debit consent. Age 18-50. बैंक में नामांकन करें।",
     "helpline": "1800-180-1111",
-    "category": ["insurance", "welfare", "bima", "suraksha"]
+    "category": ["insurance", "welfare", "bima", "suraksha", "life"]
   },
   {
     "id": "pm-suraksha-bima",
     "name": "PM Suraksha Bima Yojana",
     "name_hi": "पीएम सुरक्षा बीमा योजना",
-    "description": "Accident insurance with Rs 2 lakh for accidental death and Rs 1 lakh for partial disability at just Rs 20 per year. Cheapest insurance in India. For farmers, laborers, everyone. दुर्घटना बीमा - सिर्फ 20 रुपये साल में 2 लाख का बीमा। किसान, मजदूर, कोई भी ले सकता है। सबसे सस्ता बीमा।",
+    "description": "Accident insurance at just Rs 20/year. Rs 2 lakh to nominee in case of accidental death, Rs 1 lakh for partial disability (loss of one limb or eye). Auto-debited from bank account annually. For ages 18-70 — much wider age range than most schemes. सिर्फ 20 रुपये साल में 2 लाख का दुर्घटना बीमा। 70 साल तक के सभी के लिए।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "family_size": null,
+      "age_min": 18,
+      "age_max": 70,
+      "condition": "Must have bank account"
     },
-    "benefits": "Rs 2 lakh accidental death cover, Rs 1 lakh partial disability cover at Rs 20/year. सिर्फ 20 रुपये में 2 लाख का दुर्घटना बीमा।",
-    "documents_required": ["Aadhaar Card", "Bank account"],
+    "benefits": "Rs 2 lakh accidental death cover, Rs 1 lakh partial disability cover (loss of one limb or one eye) at just Rs 20/year. सिर्फ 20 रुपये में 2 लाख का दुर्घटना बीमा।",
+    "premium": "Rs 20 per year (auto-debited from bank account)",
+    "coverage": {
+      "accidental_death": "Rs 2 lakh",
+      "partial_disability": "Rs 1 lakh (loss of one limb or one eye)"
+    },
+    "documents_required": ["Aadhaar Card", "Bank account with auto-debit consent"],
     "how_to_apply": "Enroll at any bank branch. Age 18-70. बैंक में नामांकन करें।",
     "helpline": "1800-180-1111",
-    "category": ["insurance", "welfare", "bima", "suraksha", "durghatna"]
+    "category": ["insurance", "welfare", "bima", "suraksha", "durghatna", "accident"]
   },
   {
     "id": "swachh-bharat-gramin",
     "name": "Swachh Bharat Mission - Gramin",
     "name_hi": "स्वच्छ भारत मिशन - ग्रामीण",
-    "description": "Financial assistance for construction of individual household toilets in rural areas. Rs 12000 for building toilet. For farmer families, any rural family without toilet. शौचालय बनाने के लिए 12000 रुपये। गांव में जिनके घर में शौचालय नहीं है। किसान, मजदूर सभी के लिए।",
+    "description": "Rs 12,000 incentive for construction of individual household toilet in rural areas. Since October 2014, over 11 crore toilets have been built. Communities declared Open Defecation Free (ODF) under this mission. For any rural family without toilet — farmer, laborer, anyone. गांव में शौचालय बनाओ, 12,000 रुपये पाओ। 11 करोड़ से अधिक शौचालय बने।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "family_size": null,
+      "condition": "Household without toilet in rural area"
     },
-    "benefits": "Rs 12,000 incentive for toilet construction. शौचालय निर्माण के लिए 12,000 रुपये।",
-    "documents_required": ["Aadhaar Card", "BPL list inclusion or Gram Panchayat recommendation"],
-    "how_to_apply": "Apply through Gram Panchayat or Block Development Office. ग्राम पंचायत में आवेदन करें।",
+    "benefits": "Rs 12,000 incentive for toilet construction (directly to beneficiary's bank account via DBT). Incentive amount transferred in 2 installments after construction verification. शौचालय बनाने पर 12,000 रुपये सीधे बैंक खाते में।",
+    "incentive_breakdown": "Rs 12,000 total paid in installments after toilet construction and verification by Gram Panchayat",
+    "documents_required": ["Aadhaar Card", "Gram Panchayat verification of household without toilet", "Bank account for DBT"],
+    "how_to_apply": "Apply through Gram Panchayat. After toilet construction, submit photo to Gram Panchayat. Verification done, then Rs 12,000 transferred to bank. ग्राम पंचायत में आवेदन करें।",
     "helpline": "1969",
-    "category": ["sanitation", "welfare", "shauchalay", "toilet"]
+    "website": "swachhagrahi.gov.in",
+    "toilets_built": "11 crore+ since October 2014",
+    "category": ["sanitation", "welfare", "shauchalay", "toilet", "swachh"]
   },
   {
     "id": "soil-health-card",
     "name": "Soil Health Card Scheme",
     "name_hi": "मृदा स्वास्थ्य कार्ड योजना",
-    "description": "Free soil testing and health card for farmers with crop-wise nutrient recommendations. Helps farmers reduce fertilizer costs and increase crop yield. All farmers eligible. मिट्टी जांच मुफ्त। खाद कितनी डालनी है बताते हैं। फसल की पैदावार बढ़ाने में मदद। सभी किसानों के लिए। UP, MP, Bihar सभी राज्यों में।",
+    "description": "Free soil testing and health card for farmers with crop-wise fertilizer recommendations. Soil Health Card issued every 2 years showing NPK and micronutrient status of their land. Recommendations help reduce fertilizer costs by 20-25% and increase yield. All farmers eligible across all states. मिट्टी जांच मुफ्त, हर 2 साल में कार्ड। खाद की सलाह - लागत 20-25% कम और पैदावार बढ़ाएं।",
     "eligibility": {
       "occupation": ["farmer", "kisan"],
-      "land_max_acres": 50,
+      "land_max_acres": null,
       "states": ["all"],
       "income_max": null,
       "family_size": null
     },
-    "benefits": "Free soil testing every 2 years. Personalized fertilizer recommendations. Reduces input costs. हर 2 साल में मुफ्त मिट्टी जांच।",
-    "documents_required": ["Aadhaar Card", "Land records"],
-    "how_to_apply": "Contact local agriculture department or Krishi Vigyan Kendra. कृषि विभाग या KVK से संपर्क करें।",
+    "benefits": "Free soil testing every 2 years. Soil Health Card with NPK status and crop-wise fertilizer recommendation. Reduces fertilizer cost 20-25% and improves yield. हर 2 साल में मुफ्त मिट्टी जांच, फसलानुसार खाद सलाह।",
+    "card_frequency": "Issued once every 2 years per farmer",
+    "parameters_tested": "N, P, K (nitrogen, phosphorus, potassium) + micronutrients (Zinc, Iron, Manganese, etc.) + pH level",
+    "documents_required": ["Aadhaar Card", "Land records or Khatauni copy", "Farmer's mobile number for SMS alerts"],
+    "how_to_apply": "Contact nearest Krishi Vigyan Kendra (KVK), block agriculture office, or state agriculture department. Soil sample collected from farmer's field, tested at lab. KVK या कृषि विभाग से संपर्क करें।",
     "helpline": "1800-180-1551",
-    "category": ["agriculture", "mitti", "fasal", "khad", "kisan"]
+    "website": "soilhealth.dac.gov.in",
+    "category": ["agriculture", "mitti", "fasal", "khad", "kisan", "testing"]
   },
   {
     "id": "pm-matru-vandana",
     "name": "PM Matru Vandana Yojana",
     "name_hi": "पीएम मातृ वंदना योजना",
-    "description": "Cash incentive of Rs 5000 for pregnant and lactating women for first living child. For all women including farmer wives, laborer wives. गर्भवती महिलाओं को 5000 रुपये। पहले बच्चे के लिए। किसान की पत्नी, मजदूर की पत्नी, सभी महिलाओं के लिए।",
+    "description": "Cash incentive of Rs 5000 for pregnant and lactating women for first living child. Paid in 3 installments: first on pregnancy registration, second after 6 months pregnancy (first ultrasound), third after child birth and registration. For all pregnant women — farmer wives, laborer wives, any woman. गर्भवती महिलाओं को 5000 रुपये, पहले बच्चे के लिए। तीन किस्तों में।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "family_size": null,
+      "gender": "Pregnant and lactating women only",
+      "child_order": "First living child only (not for second child onwards)"
     },
-    "benefits": "Rs 5000 in 3 installments during pregnancy and after delivery for first child. पहले बच्चे के लिए 5000 रुपये।",
-    "documents_required": ["Aadhaar Card", "Bank account", "MCP card from ASHA/ANM"],
-    "how_to_apply": "Register at nearest Anganwadi center or sub-health center. नजदीकी आंगनवाड़ी केंद्र में नाम लिखवाएं।",
+    "benefits": "Rs 5000 in 3 installments for first child only. Installment 1: Rs 1000 on pregnancy registration. Installment 2: Rs 1000 after 6 months (first antenatal check-up). Installment 3: Rs 3000 after child birth and MCP card registration. पहले बच्चे के लिए 5000 रुपये, 3 किस्तों में।",
+    "installment_structure": {
+      "installment_1": "Rs 1000 on pregnancy registration at Anganwadi/ASHA",
+      "installment_2": "Rs 1000 after 6 months pregnancy (first ultrasound/antenatal check)",
+      "installment_3": "Rs 3000 after child birth and MCP card registration with ASHA/ANM"
+    },
+    "documents_required": ["Aadhaar Card", "Bank account", "MCP (Mother and Child Protection) card from ASHA/ANM", "Pregnancy registration proof"],
+    "how_to_apply": "Register at nearest Anganwadi center or sub-health center with ASHA/ANM. ASHA helps with registration. After registration, amount transferred to bank account. नजदीकी आंगनवाड़ी में नाम लिखवाएं।",
     "helpline": "181",
-    "category": ["women", "health", "welfare", "mahila", "garbhvati", "pregnant"]
+    "website": "wcd.nic.in",
+    "category": ["women", "health", "welfare", "mahila", "garbhvati", "pregnant", "mother"]
   },
   {
     "id": "national-scholarship",
     "name": "National Scholarship Portal",
     "name_hi": "राष्ट्रीय छात्रवृत्ति पोर्टल",
-    "description": "Central and state government scholarships for students from economically weaker sections. For farmer children, laborer children, anyone studying. छात्रवृत्ति - पढ़ाई के लिए पैसे। किसान के बच्चे, मजदूर के बच्चे, गरीब बच्चों के लिए। स्कूल से PhD तक।",
+    "description": "Central and state government scholarships for students from economically weaker families — from Class 1 to PhD level. Over 20 lakh scholarships disbursed annually. Post-matric scholarships for SC/ST/OBC and minority students. For children of farmers, laborers, and economically weak families. पढ़ाई के लिए छात्रवृत्ति - कक्षा 1 से PhD तक। गरीब परिवारों के बच्चों के लिए।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
       "states": ["all"],
       "income_max": 250000,
-      "family_size": null
+      "family_size": null,
+      "categories": ["SC students", "ST students", "OBC students", "Minority students", "General category (for specific schemes)"]
     },
-    "benefits": "Scholarships ranging from Rs 500/month to Rs 20,000/month depending on scheme and level. 500 से 20,000 रुपये महीना छात्रवृत्ति।",
-    "documents_required": ["Aadhaar Card", "Income certificate", "Caste certificate", "Previous marksheet", "Bank account"],
-    "how_to_apply": "Apply online at scholarships.gov.in. scholarships.gov.in पर ऑनलाइन आवेदन करें।",
+    "benefits": "Scholarships range from Rs 500/month to Rs 20,000/month depending on level (school, college, PhD) and scheme type. Includes tuition fee, maintenance allowance, book grant. 500 से 20,000 रुपये महीना छात्रवृत्ति।",
+    "scholarship_amounts": {
+      "class_1_to_10": "Rs 500-1000/month (state-specific)",
+      "class_11_to_12": "Rs 1500-2000/month",
+      "undergraduate": "Rs 2000-5000/month",
+      "postgraduate": "Rs 5000-10000/month",
+      "phd": "Rs 15000-20000/month"
+    },
+    "documents_required": ["Aadhaar Card", "Income certificate", "Caste/Category certificate (SC/ST/OBC/Minority)", "Previous year marksheet", "Bank account", "Institution verification form"],
+    "how_to_apply": "Apply online at scholarships.gov.in. Multiple schemes listed — filter by category, state, level. Track application status online. scholarships.gov.in पर ऑनलाइन आवेदन करें।",
     "helpline": "0120-6619540",
-    "category": ["education", "welfare", "padhai", "school", "scholarship"]
+    "website": "scholarships.gov.in",
+    "category": ["education", "welfare", "padhai", "school", "scholarship", "student"]
   },
   {
     "id": "stand-up-india",
     "name": "Stand Up India",
     "name_hi": "स्टैंड अप इंडिया",
-    "description": "Bank loans between Rs 10 lakh and Rs 1 crore to SC/ST and women entrepreneurs for setting up new businesses. For women from farmer families, SC/ST families. महिलाओं और SC/ST के लिए व्यापार लोन। 10 लाख से 1 करोड़ तक। किसान परिवार की महिला भी ले सकती है।",
+    "description": "Bank loans from Rs 10 lakh to Rs 1 crore for SC/ST and women entrepreneurs to set up new businesses in manufacturing, services, or trading. 75% of project cost covered by loan. For women from farmer families, SC/ST families wanting to start enterprises. महिलाओं और SC/ST के लिए 10 लाख से 1 करोड़ तक का व्यापार लोन।",
+    "eligibility": {
+      "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
+      "land_max_acres": null,
+      "states": ["all"],
+      "income_max": null,
+      "family_size": null,
+      "categories": ["Women entrepreneurs (any sector)", "SC/ST entrepreneurs (any sector)"],
+      "entity_type": "For setting up new manufacturing, services, or trading enterprises (not for agriculture)"
+    },
+    "benefits": "Composite loan Rs 10 lakh to Rs 1 crore covering up to 75% of project cost. Repayment tenure up to 7 years. Interest subsidy not provided — rate as per bank norms. 10 लाख से 1 करोड़ का लोन।",
+    "loan_range": "Rs 10 lakh to Rs 1 crore per enterprise",
+    "project_coverage": "Loan covers up to 75% of total project cost",
+    "repayment": "Up to 7 years (including moratorium period)",
+    "documents_required": ["Aadhaar Card", "Caste/Category certificate (SC/ST)", "Business plan", "Address proof", "Bank statements (1 year)", "Shop/business premise proof"],
+    "how_to_apply": "Apply at any scheduled commercial bank branch. Also apply through standupmitra.in portal. Bank sanctions based on business viability. बैंक में आवेदन करें।",
+    "helpline": "1800-180-1111",
+    "website": "standupmitra.in",
+    "category": ["business", "women", "welfare", "mahila", "loan", "sc_st"]
+  },
+  {
+    "id": "kcc",
+    "name": "Kisan Credit Card",
+    "name_hi": "किसान क्रेडिट कार्ड",
+    "description": "Timely credit for agriculture and allied activities at subsidized interest. Effective interest rate 4% per annum (2% interest subvention by government + 3% prompt repayment bonus). Credit limit based on land holdings and cropping pattern.ATM-enabled RuPay card for withdrawals. Also covers fisheries and animal husbandry. किसान क्रेडिट कार्ड - 4% ब्याज पर लोन। ATM कार्ड, खेती और पशुपालन दोनों के लिए।",
+    "eligibility": {
+      "occupation": ["farmer", "kisan"],
+      "land_max_acres": null,
+      "states": ["all"],
+      "income_max": null,
+      "family_size": null,
+      "activities": ["Crop production", "Nursery raising", "Fisheries", "Dairy", "Poultry", "Animal husbandry", "Allied activities"]
+    },
+    "benefits": "Credit at 4% effective interest rate (with prompt repayment). ATM-enabled RuPay card. Crop insurance included. Limit: up to Rs 3 lakh (being increased to Rs 5 lakh). 4% ब्याज, ATM कार्ड, फसल बीमा।",
+    "interest_rate": "4% effective (2% govt subvention + 3% prompt repayment bonus on Rs 3 lakh limit)",
+    "loan_limit": "Up to Rs 3 lakh (being increased to Rs 5 lakh per Union Budget 2025-26)",
+    "card_features": ["ATM withdrawals anywhere in India", "Purchase inputs from authorized dealers", "Insurance coverage for crops and assets", "Flexible repayment (renewed annually)"],
+    "documents_required": ["Aadhaar Card", "Land records (खसरा/खतौनी) or record of rights", "Passport size photo", "Bank account statement", "Crop details and area under cultivation"],
+    "how_to_apply": "Apply at any bank branch with land documents. Credit limit fixed based on land area, cropping pattern, and farm income. Can also apply through online banking. बैंक में आवेदन करें।",
+    "helpline": "1800-180-1551",
+    "website": "bankinfo.in/kisan-credit-card",
+    "category": ["agriculture", "banking", "loan", "kisan", "credit", "atm"]
+  },
+  {
+    "id": "pm-vishwakarma",
+    "name": "PM Vishwakarma",
+    "name_hi": "पीएम विश्वकर्मा",
+    "description": "New scheme launched in September 2023 for traditional artisans and craftspeople — carpenters, blacksmiths, potters, weavers, tailors, cobblers, stone carvers, etc. Provides skill training, modern tools, and collateral-free loans up to Rs 3 lakh at concessional rates. First scheme for artisans in 40 years. पारंपरिक कारीगरों के लिए नई योजना। प्रशिक्षण, आधुनिक उपकरण, 3 लाख तक का लोन।",
+    "eligibility": {
+      "occupation": ["carpenter", "blacksmith", "potter", "weaver", "tailor", "cobbler", "stone_carver", "smith", "artisan", "craftsperson"],
+      "land_max_acres": null,
+      "states": ["all"],
+      "income_max": null,
+      "family_size": null,
+      "artisan_types": ["Carangers", "Cobblers", "Blacksmiths", "Carpenters", "Potters", "Weavers", "Tailors", "Barbers", "Garment workers", "Shoe makers", "Jewel makers", "Ladweavers", "Baskets makers", "Craftsmen"]
+    },
+    "benefits": "Skill training free, modern tool kit incentive Rs 15,000, collateral-free loan up to Rs 3 lakh at 5% interest rate (no processing fee). First tranche Rs 1 lakh, second Rs 2 lakh. मुफ्त प्रशिक्षण, 15,000 का टूलकिट, 3 लाख लोन 5% ब्याज पर।",
+    "skill_training": "Skill training through DGT/State institutes - free of cost",
+    "toolkit_incentive": "Rs 15,000 for modern tools (one-time)",
+    "loan_terms": "Rs 1 lakh first tranche, Rs 2 lakh second tranche. Interest rate 5% (no processing fee). No collateral required.",
+    "documents_required": ["Aadhaar Card", "Skill/self-declaration of artisan work", "Bank account", "Photo", "Address proof"],
+    "how_to_apply": "Apply at nearest bank branch or CSC. Also apply online at pmvishwakarma.gov.in. No documents needed except Aadhaar (self-declaration of craft). pmvishwakarma.gov.in पर ऑनलाइन जाएं या बैंक में आवेदन करें।",
+    "helpline": "1800-267-6888",
+    "website": "pmvishwakarma.gov.in",
+    "category": ["artisan", "skill", "loan", "training", "carpenter", "blacksmith", "craftsman"]
+  },
+  {
+    "id": "pm-surya-ghar",
+    "name": "PM Surya Ghar: Muft Bijli Yojana",
+    "name_hi": "पीएम सूर्य घर: मुफ्त बिजली योजना",
+    "description": "Free rooftop solar electricity for poor households. Subsidy of Rs 30,000-70,000 for installing solar panels on roof. Generates up to 300 units free electricity per month. Surplus sold to DISCOM for extra income. For households with roof space — farmers, rural homes, any low-income family. छत पर सोलर पैनल, मुफ्त बिजली। 30,000-70,000 सब्सिडी। 300 यूनिट महीना मुफ्त।",
+    "eligibility": {
+      "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
+      "land_max_acres": null,
+      "states": ["all"],
+      "income_max": null,
+      "family_size": null,
+      "conditions": ["Own house with roof space", "No existing solar system", "Valid electricity connection"
+      ],
+      "income_limit": "Annual household income up to Rs 3 lakh (before May 2024 update)"
+    },
+    "benefits": "Central subsidy Rs 30,000-70,000 depending on system size. Generates up to 300 units/month free electricity. Surplus power sold to grid for additional income. 30,000-70,000 सब्सिडी, 300 यूनिट महीना मुफ्त बिजली।",
+    "subsidy_breakdown": {
+      "1kW_system": "Rs 30,000 subsidy",
+      "2kW_system": "Rs 60,000 subsidy",
+      "3kW_plus_system": "Rs 78,000 subsidy (capped)"
+    },
+    "documents_required": ["Aadhaar Card", "Electricity bill/connection copy", "Bank account", "Roof ownership proof", "Passport size photo"],
+    "how_to_apply": "Apply on national portal (surya.gov.in) or through DISCOM/bank. Empaneled vendor installs system. Subsidy credited to bank account after installation and verification. Surya.gov.in पर आवेदन करें।",
+    "helpline": "1800-889-9444",
+    "website": "surya.gov.in",
+    "category": ["energy", "solar", "electricity", "roof", "renewable", "surya"]
+  },
+  {
+    "id": "pmgky",
+    "name": "PM Garib Kalyan Yojana",
+    "name_hi": "पीएम गरीब कल्याण योजना",
+    "description": "Free ration to 81 crore beneficiaries under Pradhan Mantri Garib Kalyan Anna Yojana (PMGKAY). Additional 5 kg foodgrains per person per month free on top of normal NFSA ration. Running continuously since April 2020. For NFSA cardholders — farmers, laborers, all poor families. 81 करोड़ लोगों को मुफ्त राशन। सामान्य राशन के ऊपर 5 किलो अतिरिक्त मुफ्त।",
+    "eligibility": {
+      "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
+      "land_max_acres": null,
+      "states": ["all"],
+      "income_max": null,
+      "family_size": null,
+      "condition": "All NFSA (ration card) holders — over 81 crore people"
+    },
+    "benefits": "5 kg additional foodgrains per person per month FREE on top of normal ration. Rice/wheat at Rs 0-1/kg under PMGKAY. Total 10 kg free foodgrains per person/month for NFSA beneficiaries. NFSA कार्ड वालों को 5 किलो अतिरिक्त मुफ्त अनाज।",
+    "ration_under_pmgkay": "5 kg free foodgrains per person/month (in addition to normal NFSA ration)",
+    "allocation": "Rice at Re 1/kg or Wheat at Re 1/kg (state varies)",
+    "documents_required": ["Valid Ration Card (NFSA registered)", "Aadhaar of all family members",
+      "bank_account_for_dbt"
+    ],
+    "how_to_apply": "No separate application needed if you have NFSA/ration card. Free extra ration automatically credited at ration shop. Simply collect from ration dealer with your card. राशन कार्ड हो तो अपने आप मिल जाएगा।",
+    "helpline": "1967",
+    "category": ["food", "welfare", "ration", "garib", "free", "pmgky"]
+  },
+  {
+    "id": "jan-aushadhi",
+    "name": "PM Bhartiya Janaushadhi Pariyojana",
+    "name_hi": "पीएम भारतीय जनऔषधि परियोजना",
+    "description": "Affordable quality generic medicines from Jan Aushadhi Kendras. 18,646 Kendras across India with 2,110 medicines and 315 surgical items at 50-80% lower price than branded equivalents. No prescription needed to buy. For all citizens — farmers, laborers, anyone needing affordable medicines. जनऔषधि केंद्र से सस्ती दवाइयां। ब्रांडेड दवाओं से 50-80% सस्ती।",
     "eligibility": {
       "occupation": ["any", "farmer", "kisan", "laborer", "mazdoor"],
       "land_max_acres": null,
@@ -335,28 +569,56 @@
       "income_max": null,
       "family_size": null
     },
-    "benefits": "Composite loan Rs 10 lakh to Rs 1 crore. Covers 75% of project cost. Repayment up to 7 years. 10 लाख से 1 करोड़ का लोन।",
-    "documents_required": ["Aadhaar Card", "Caste/Category certificate", "Business plan", "Address proof", "Bank statements"],
-    "how_to_apply": "Apply at any scheduled commercial bank branch or through standupmitra.in portal. बैंक में आवेदन करें।",
+    "benefits": "Medicines and surgical items at 50-80% cheaper than market rates. No prescription required. All essential medicines including diabetes, BP, heart, antibiotics, etc. available. 50-80% सस्ती दवाइयां।",
+    "kendra_count": "18,646 Jan Aushadhi Kendras (target 25,000 by March 2027)",
+    "product_basket": "2,110 medicines + 315 surgical items and medical consumables",
+    "documents_required": ["No documents needed to buy medicines", "Doctor's prescription (optional but helps get exact generic name)"],
+    "how_to_apply": "No enrollment needed. Visit nearest Jan Aushadhi Kendra (find at janaushadhi.gov.in) and purchase medicines by generic name. Call 1800-180-1111 for store locator. janaushadhi.gov.in पर जाएं।",
     "helpline": "1800-180-1111",
-    "category": ["business", "women", "welfare", "mahila", "loan"]
+    "website": "janaushadhi.gov.in",
+    "category": ["health", "medicines", "generic", "dawai", "aushadhi", "affordable"]
   },
   {
-    "id": "kcc",
-    "name": "Kisan Credit Card",
-    "name_hi": "किसान क्रेडिट कार्ड",
-    "description": "Provides farmers with timely credit for agriculture, animal husbandry, and fisheries at subsidized interest rates. ATM card for farmers. All farmers eligible in all states including UP, MP, Bihar. किसान क्रेडिट कार्ड - खेती के लिए सस्ता लोन। 4% ब्याज पर। ATM कार्ड भी मिलता है। UP, MP, Bihar सभी राज्यों के किसानों के लिए। फसल बीमा भी साथ में।",
+    "id": "pm-svanidhi",
+    "name": "PM SVANidhi - Street Vendor",
+    "name_hi": "पीएम स्वनिधि - स्ट्रीट वेंडर",
+    "description": "Collateral-free loan up to Rs 50,000 for street vendors to resume their business. No interest if repaid on time in first year. Digital transaction incentive Rs 50/month. For street vendors, hawkers, small entrepreneurs in markets. स्ट्रीट वेंडर के लिए 50,000 तक का लोन।",
     "eligibility": {
-      "occupation": ["farmer", "kisan"],
-      "land_max_acres": 50,
+      "occupation": ["vendor", "hawker", "street seller", "laborer", "mazdoor"],
+      "land_max_acres": null,
       "states": ["all"],
       "income_max": null,
-      "family_size": null
+      "family_size": null,
+      "vendor_types": ["Street vendors", "Hawkers", "Small market sellers", "Periodic markets (haat)"]
     },
-    "benefits": "Credit at 4% interest (with prompt repayment). ATM-enabled card. Crop insurance included. 4% ब्याज पर लोन, ATM कार्ड, फसल बीमा।",
-    "documents_required": ["Aadhaar Card", "Land records (खसरा/खतौनी)", "Passport photo", "Bank account"],
-    "how_to_apply": "Apply at any bank branch. Existing bank account holders can apply directly. बैंक में आवेदन करें।",
-    "helpline": "1800-180-1551",
-    "category": ["agriculture", "banking", "loan", "kisan", "credit"]
+    "benefits": "Collateral-free loan up to Rs 50,000. No interest if repaid on time in first year. Digital transaction incentive Rs 50/month for first year. बिना गारंटी 50,000 तक का लोन।",
+    "loan_terms": "Rs 50,000 max, 12-month tenure, 0% interest on timely repayment",
+    "digital_incentive": "Rs 50/month digital transaction reward for first year",
+    "documents_required": ["Aadhaar Card", "Vending certificate or local authority letter (self-declaration if not available)", "Bank account"],
+    "how_to_apply": "Apply at any bank branch or through Business Correspondent. Also apply on pm-svanidhi.nsdl.co.in. Check vendor list with local municipal authority. बैंक में आवेदन करें।",
+    "helpline": "1800-120-1040",
+    "website": "pm-svanidhi.nsdl.co.in",
+    "category": ["business", "vendor", "loan", "street", "hawker"]
+  },
+  {
+    "id": "pmjay-70-plus",
+    "name": "Ayushman Bharat PMJAY - Senior Citizens 70+",
+    "name_hi": "आयुष्मान भारत पीएमजेएवाई - 70+ नागरिकों के लिए",
+    "description": "Since September 2024, ALL citizens aged 70 years and above are eligible for Ayushman Bharat PMJAY, regardless of income, occupation, or social category. Rs 5 lakh/year coverage for hospitalization. For elderly farmers, laborers, anyone aged 70+. दादा-दादी के लिए आयुष्मान - बिना आय सीमा के।",
+    "eligibility": {
+      "occupation": ["any"],
+      "land_max_acres": null,
+      "states": ["all"],
+      "income_max": null,
+      "family_size": null,
+      "age_limit": "70 years and above",
+      "note": "Since Sep 2024 — no income/occupation restriction for 70+ citizens"
+    },
+    "benefits": "Rs 5 lakh/year health coverage for all citizens 70+ regardless of income. Cashless treatment at 25,000+ empanelled hospitals. Covers all pre-existing conditions from day 1. 70 वर्ष से अधिक सभी के लिए 5 लाख कवर।",
+    "documents_required": ["Aadhaar Card", "Age proof (any official document)", "Existing Ayushman Card holders 70+: card already valid"],
+    "how_to_apply": "Check eligibility at mera.pmjay.gov.in or call 14555. Visit nearest CSC, bank, or empanelled hospital to get Ayushman Card. 14555 पर कॉल करें।",
+    "helpline": "14555",
+    "website": "pmjay.gov.in",
+    "category": ["health", "senior", "elderly", "70plus", "hospital"]
   }
 ]

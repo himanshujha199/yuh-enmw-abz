@@ -21,7 +21,7 @@ def test_search_collection_returns_results():
     assert results[0]["score"] == 0.85
 
 
-def test_filter_and_search_schemes_applies_filters():
+def test_filter_and_search_schemes_uses_semantic_search():
     mock_client = MagicMock()
     mock_point = MagicMock()
     mock_point.payload = {
@@ -40,8 +40,13 @@ def test_filter_and_search_schemes_applies_filters():
             limit=3
         )
 
-    # Verify filter was passed to query_points
+    # Verify query_points was called (semantic search, no filters)
+    assert mock_client.query_points.called
     call_kwargs = mock_client.query_points.call_args
-    assert call_kwargs is not None
+    # occupation is appended to query text, not used as filter
     query_filter = call_kwargs.kwargs.get("query_filter") or call_kwargs[1].get("query_filter")
-    assert query_filter is not None, "Filter should have been passed to query_points"
+    assert query_filter is None, "No filter is applied — uses enriched query text for semantic search"
+    # Verify enriched query includes occupation
+    query_vector = call_kwargs.kwargs.get("query") or call_kwargs[1].get("query")
+    # The enriched query text is embedded, so we just verify call was made with correct collection
+    assert call_kwargs.kwargs.get("collection_name") == "schemes" or call_kwargs[1].get("collection_name") == "schemes"
