@@ -255,7 +255,7 @@ async def vapi_webhook(request: Request):
 
     if msg_type == "assistant-request":
         return _handle_assistant_request(message)
-    elif msg_type == "function-call":
+    elif msg_type == "tool-calls":
         return _handle_function_call(message)
     elif msg_type == "end-of-call-report":
         return _handle_end_of_call(message)
@@ -288,9 +288,15 @@ def _handle_assistant_request(message: dict) -> dict:
 
 def _handle_function_call(message: dict) -> dict:
     """Execute a tool function and return the result in Vapi's required format."""
-    func = message.get("functionCall", {})
+    # Vapi sends toolCallList array OR functionCall object depending on version
+    tool_call_list = message.get("toolCallList", [])
+    if tool_call_list:
+        func = tool_call_list[0]
+    else:
+        func = message.get("functionCall", {})
+
     name = func.get("name", "")
-    params = func.get("parameters", {})
+    params = func.get("arguments", func.get("parameters", {}))
     tool_call_id = func.get("id", "")
 
     # Inject phone number from call metadata if not in params
